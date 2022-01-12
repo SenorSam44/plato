@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    # Redirect to public
+    RewriteCond %{HTTP_HOST} ^amityapartment.com.bd$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^www.amityapartment.com.bd$
+    RewriteCond %{REQUEST_URI} !public/
+    RewriteRule (.*) /public/$1 [L]
+</IfModule>
+

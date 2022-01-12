@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7e08f192-de3e-43cb-8531-101718971f8e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/plato.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DoctorsEducation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/DoctorsProfile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/AboutController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/BannerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/MemberController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/MessageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/NewsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/ProjectController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/ReviewController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/V1/ServiceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustHosts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/About.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Banner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Member.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/News.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Project.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Review.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/hashing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/AboutFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/BannerFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/DepartmentFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/DoctorFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/DoctorsEducationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ProjectFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ReviewFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ServiceFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_002339_create_abouts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_008707_create_banners_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171113_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171115_create_projects_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171116_create_projects_images_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171442_create_members_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171507_create_services_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171602_create_news_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171643_create_reviews_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_25_171644_create_messages_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/assets/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/data/flot-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/data/morris-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/dist/css/sb-admin-2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/dist/css/sb-admin-2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/dist/js/sb-admin-2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/dist/js/sb-admin-2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/js/sb-admin-2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/less/sb-admin-2.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap-social/bootstrap-social.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap-social/bootstrap-social.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap-social/bootstrap-social.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-plugins/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-plugins/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-plugins/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-plugins/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-responsive/dataTables.responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-responsive/dataTables.responsive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables-responsive/dataTables.responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.material.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.uikit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/dataTables.uikit.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/jquery.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/css/jquery.dataTables_themeroller.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/Sorting icons.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/sort_asc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/sort_asc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/sort_both.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/sort_desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/images/sort_desc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.material.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.material.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.uikit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/dataTables.uikit.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/datatables/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot-tooltip/jquery.flot.tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot-tooltip/jquery.flot.tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot-tooltip/jquery.flot.tooltip.source.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/excanvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/excanvas.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.colorhelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.categories.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.crosshair.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.errorbars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.fillbetween.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.navigate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.pie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.selection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.stack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.symbol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.threshold.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.flot.time.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/flot/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/css/font-awesome.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/extras.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/spinning.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_extras.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_spinning.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/metisMenu/metisMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/metisMenu/metisMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/metisMenu/metisMenu.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/metisMenu/metisMenu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/morrisjs/morris.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/morrisjs/morris.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/morrisjs/morris.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/raphael/raphael.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/vendor/raphael/raphael.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/audio/audio.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/apolo-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/hamburgers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/hamburgers.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/linearicons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/rtl/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/Linearicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/apolo-font-1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/apolo-font-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/apolo-font-1.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/apolo-font-1.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/home_striped.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/apolo.core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/apolo.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.appear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.contact-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.fullpage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.isotope.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.newsletter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.parallax-grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/js/modules/apolo.sameheight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/modals/modal_full_screen_navigation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/modals/modal_photo_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/php/MailSender.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/php/contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/php/subscribe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/appear.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/arcticmodal/jquery.arcticmodal-0.3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/arcticmodal/jquery.arcticmodal-0.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/arcticmodal/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fancybox/jquery.fancybox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fancybox/jquery.fancybox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fancybox/jquery.fancybox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fancybox/jquery.fancybox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.extensions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/jquery.fullpage.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/vendors/scrolloverflow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/fullpage/vendors/scrolloverflow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/handlebars-v4.0.5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/imagesloaded.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/isotope.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/jquery.easing.1.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/jquery.smoothscroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mCustomScrollbar/jquery.mCustomScrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mCustomScrollbar/jquery.mCustomScrollbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mCustomScrollbar/jquery.mCustomScrollbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mad.accordion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mad.customselect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mad.customselect.js.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/mad.tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/modernizr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.theme.default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.theme.green.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.theme.green.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/assets/owl.video.play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/owl-carousel/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/retina.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/coloredbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/gridtile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/gridtile_3x3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/gridtile_3x3_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/gridtile_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/fb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/fr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/ig.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/post.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/revolution_slide1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/revolution_slide2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/tw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/vm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/wc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/sources/yt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/svg/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/assets/svg/svg.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/closedhand.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/layers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/ares.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/dione.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/erinyen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/gyges.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/hades.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/hebe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/hephaistos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/hermes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/hesperiden.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/metis.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/persephone.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/uranus.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation-skins/zeus.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/navigation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/openhand.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/settings-source.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/css/tp-color-picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/font-awesome/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/css/helper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/css/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/fonts/Pe-icon-7-stroke.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/fonts/Pe-icon-7-stroke.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/fonts/Pe-icon-7-stroke.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/fonts/Pe-icon-7-stroke.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/fonts/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/pe-icon-7-stroke/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/revicons/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/revicons/revicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/revicons/revicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/revicons/revicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/fonts/revicons/revicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/arrow_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/arrow_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/check_reverse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/check_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/point_bottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/point_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/images/tpcolorpicker/trans_tile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/info.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.migration.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.navigation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/revolution.extension.video.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.kenburn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.layeranimation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.migration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.parallax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.slideanims.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/extensions/source/revolution.extension.video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/jquery.themepunch.enablelog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/jquery.themepunch.revolution.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/jquery.themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/source/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/source/jquery.themepunch.enablelog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/source/jquery.themepunch.revolution.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/source/jquery.themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/source/tp-color-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/js/tp-color-picker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/facebook/class-facebook.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/flickr/class-flickr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/instagram/class-instagram.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/twitter/RestApi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/twitter/class-twitter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/twitter/connection/Application.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/twitter/connection/ConnectionAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/twitter/connection/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/vimeo/class-vimeo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/revolution/php/youtube/class-youtube.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/swiper/swiper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/swiper/swiper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/swiper/swiper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/swiper/swiper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/wat.counters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/wt.jquery.nav.1.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/frontend/vendors/wt.validator.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/about/addAbout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/about/editAbout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/about/manageAbout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/admin_layout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/banner/editBanner.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/banner/manageBanner.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/addCategory.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/editCategory.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/manageCategory.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/include/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/include/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/member/addMember.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/member/editMember.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/member/manageMember.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/message/manageMessages.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news/addNews.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news/editNews.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news/manageNews.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/project/addProject.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/project/editProject.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/project/manageProject.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/review/addReview.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/review/editReview.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/review/manageReview.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/service/addService.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/service/editService.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/service/manageService.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/home_content.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/home_content2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/home_layout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/home_layout2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/includes/footer-small.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/includes/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/includes/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/banners.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/categorizedProjects.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/departments.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/members.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/news2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/projects.blade - Copy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/projects.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/projects2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/reviews.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/manages/services.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/about.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/banner.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/department.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/home_content2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/member.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/moreabout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/news.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/project.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/project2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/review.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/service.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/static/contacts.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/static/missionvison.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/single/static/objectives.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home_layout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/console.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/CreatesApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="23aVzPPKLEMlUv2dQMCbwbdRSFg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e08f192-de3e-43cb-8531-101718971f8e" name="Default Changelist" comment="" />
+      <created>1641972446550</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641972446550</updated>
+      <workItem from="1641972447622" duration="674000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="857" y="453" width="277" height="207" key="Github.ShareDialog" timestamp="1641972858644">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="857" y="453" width="277" height="207" key="Github.ShareDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1641972858644" />
+    <state x="722" y="233" width="537" height="647" key="Github.UntrackedFilesDialog" timestamp="1641972884584">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="722" y="233" width="537" height="647" key="Github.UntrackedFilesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1641972884584" />
+  </component>
+</project>

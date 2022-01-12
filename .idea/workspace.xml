@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e08f192-de3e-43cb-8531-101718971f8e" name="Default Changelist" comment="">
+    <list default="true" id="7e08f192-de3e-43cb-8531-101718971f8e" name="Default Changelist" comment="init">
       <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
@@ -716,7 +716,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641972446550</updated>
-      <workItem from="1641972447622" duration="674000" />
+      <workItem from="1641972447622" duration="1103000" />
     </task>
     <servers />
   </component>
@@ -724,7 +724,8 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="WindowStateProjectService">
     <state x="857" y="453" width="277" height="207" key="Github.ShareDialog" timestamp="1641972858644">

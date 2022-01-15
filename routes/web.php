@@ -70,7 +70,7 @@ Route::get('majorcomponents', [HomeController::class, 'majorcomponents']);
 Route::get('diagnostic', [HomeController::class, 'diagnostic']);
 
 
-//SINGLE PAGE 
+//SINGLE PAGE
 Route::get('banners/{id}', [HomeController::class, 'banner']);
 Route::get('departments/{id}', [HomeController::class, 'department']);
 Route::get('members/{id}', [HomeController::class, 'doctor']);
@@ -104,14 +104,14 @@ Route::middleware('auth:web')->group(function () {
 
 		//Route::delete('banners/{banner}', [BannerController::class, 'destroy']);
 
-		Route::get('banner', [BannerController::class, 'create']);
-		Route::get('banners', [BannerController::class, 'index']);
-		Route::post('banners', [BannerController::class, 'store']);
-		Route::get('banners/{banner}', [BannerController::class, 'show']);
-		Route::post('banners/{banner}', [BannerController::class, 'update']);
-		Route::get('edit-banner', [BannerController::class, 'show']);
-		Route::post('update-banner', [BannerController::class, 'update']);
-		Route::post('delete-banner', [BannerController::class, 'destroy']);
+        Route::get('banner', [BannerController::class, 'create']);
+        Route::get('banners', [BannerController::class, 'index']);
+        Route::post('banners', [BannerController::class, 'update']);
+        Route::get('banners/{banner}', [BannerController::class, 'show']);
+        Route::post('banners/{banner}', [BannerController::class, 'update']);
+        Route::get('edit-banner', [BannerController::class, 'show']);
+        Route::post('update-banner', [BannerController::class, 'update']);
+        Route::post('delete-banner', [BannerController::class, 'destroy']);
 
 	    Route::post('/activate-banner', [BannerController::class, 'activateBanner']);
 	    Route::post('/deactivate-banner', [BannerController::class, 'deactivateBanner']);
@@ -154,7 +154,7 @@ Route::middleware('auth:web')->group(function () {
 		Route::get('news/{news}', [NewsController::class, 'show']);
 		Route::post('news/{news}', [NewsController::class, 'update']);
 		Route::post('delete-news', [NewsController::class, 'destroy']);
-		
+
 	    Route::post('/activate-news', [NewsController::class, 'activateNews']);
 	    Route::post('/deactivate-news', [NewsController::class, 'deactivateNews']);
 

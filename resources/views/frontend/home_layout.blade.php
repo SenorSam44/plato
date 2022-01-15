@@ -49,7 +49,7 @@
     <!-- Vendor JS-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="{{ asset('frontend') }}/vendors/handlebars-v4.0.5.js"></script>
-    
+
     <script src="{{ asset('frontend') }}/vendors/wt.validator.min.js"></script>
     <script src="frontend/vendors/jquery.easing.1.3.min.js"></script>
     <script src="{{ asset('frontend') }}/vendors/mad.accordion.js"></script>

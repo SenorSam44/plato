@@ -27,6 +27,7 @@
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $banner->banner_title }}</td>
+                <td>{{ $banner->banner_subtitle }}</td>
                 <td>{{ $banner->banner_date }}</td>
                 <td>{{ $banner->banner_redirect_link }}</td>
                 <td><img src="{{asset($banner->banner_image)}}" style="height: 70px; width: 100px;"></td>
@@ -37,7 +38,7 @@
                         {{csrf_field()}}
                             <input type="hidden" name="inputId" value="{{$banner->id}}">
                             <button style="color: red" class="glyphicon glyphicon-remove" type="submit"></button>
-                        </form> 
+                        </form>
                     <?php } else{?>
                     <form method="post" action="{{URL::to('admin/activate-banner')}}" enctype="multipart/form-data">
                         {{csrf_field()}}
@@ -50,7 +51,7 @@
                     {{csrf_field()}}
                         <input type="hidden" name="inputId" value="{{$banner->id}}">
                         <button style="color: blue" class="glyphicon glyphicon-edit" type="submit"></button>
-                    </form> 
+                    </form>
 
                     <form method="post" action="{{URL::to('admin/delete-banner')}}" enctype="multipart/form-data">
                     {{csrf_field()}}

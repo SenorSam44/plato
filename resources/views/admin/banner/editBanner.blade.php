@@ -23,6 +23,15 @@
         </div>
 
         <div class="form-group">
+            <label class="control-label col-sm-2" for="banner_subtitle">Slider Subtitle:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="banner_subtitle" name="banner_subtitle"
+                       placeholder="Enter Slider Subtitle"
+                       value="{{$banner->banner_subtitle?? ""}}" required>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="control-label col-sm-2" for="banner_date">Slider Date</label>
             <div class="col-sm-10">
                 <input type="date" class="form-control" id="banner_date" name="banner_date"

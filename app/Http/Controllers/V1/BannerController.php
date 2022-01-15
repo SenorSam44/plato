@@ -4,8 +4,11 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 
 use App\Models\Banner;
+use FFMpeg\Coordinate\TimeCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg;
+use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 
 class BannerController extends Controller
 {
@@ -19,7 +22,7 @@ class BannerController extends Controller
 
     public function create()
     {
-        return view('admin.banner.addBanner');
+        return view('admin.banner.editBanner');
     }
 
     public function store(Request $request)
@@ -44,6 +47,21 @@ class BannerController extends Controller
         $count = $dep_id->count();
         $max = $dep_id->max('id')+1;
 
+        if ($request->hasFile('banner_video')) {
+
+            $image = $request->file('banner_video');
+            $name = $max.'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('uploaded_videos/banners');
+            $image->move($destinationPath, $name);
+            //$this->save();
+
+            //$totalPathName = 'public/uploaded_videos/'.$name;
+            //print_r($totalPathName) ;
+            $totalPathName = 'uploaded_videos/banners/'.$name;
+            $banners['banner_video'] = $totalPathName;
+            $success = DB::table('banners')->insert($banners);
+        }
+
         if ($request->hasFile('banner_image')) {
 
             $image = $request->file('banner_image');
@@ -65,22 +83,66 @@ class BannerController extends Controller
     }
 
     public function show($id){
-        $edit_banner = DB::table('banners')
+        $banner = DB::table('banners')
             ->where('banners.id','=',$id)
-            ->get();
-        return view('admin.banner.editBanner',['edit_banner'=>$edit_banner]);
+            ->first();
+        return view('admin.banner.editBanner',['banner'=>$banner]);
     }
 
     public function update(Request $request)
     {
-        //dd($request->all());
-        $id = $request->inputId;
+        $id = $request->inputId?? Banner::max('id')+1;
 
         $banners = array();
+//        if (isset($request->inputId)){
+//            $banners['id'] = $id;
+//        }
         $banners['banner_title'] = $request->banner_title;
         $banners['banner_subtitle'] = $request->banner_subtitle;
+        $banners['banner_date'] = $request->banner_date;
+        $banners['banner_redirect_link'] = $request->banner_redirect_link;
         $banners['banner_description'] = $request->banner_description;
         $banners['publication_status'] = $request->publication_status;
+
+        if ($request->hasFile('banner_video')) {
+            $video = $request->file('banner_video');
+            $name = $id.'.'.$video->getClientOriginalExtension();
+            $destinationPath = public_path('uploaded_videos/banners');
+            $video->move($destinationPath, $name);
+            //$this->save();
+
+            //$totalPathName = 'public/uploaded_videos/'.$name;
+            //print_r($totalPathName) ;
+            $totalPathName = 'uploaded_videos/banners/'.$name;
+            $banners['banner_video'] = $totalPathName;
+//            $success = DB::table('banners')->where('id','=',$id)->updateOrInsert($banners);
+
+            //image thumbnail
+
+            try {
+                $ffvideo = FFMpeg::fromDisk('directpublic')->open($totalPathName);
+
+
+//            $image = $request->file('banner_image');
+                $name = $id . '.jpg';
+                $destinationPath = public_path('uploaded_images/banners');
+//            $image->move($destinationPath, $name);
+//            dd($ffvideo->getFrameFromSeconds(2)->export());
+                $ffvideo->getFrameFromSeconds(0)->export()->toDisk('directpublic')->save('/uploaded_images/banners/'.$name);
+
+                $totalPathName = 'uploaded_images/banners/' . $name;
+                $banners['banner_image'] = $totalPathName;
+
+            }catch (\Exception $e){
+
+            }
+            if ($request->inputId){
+                DB::table('banners')->where('id', '=', $id)->update($banners);
+            }else{
+                DB::table('banners')->where('id', '=', $id)->insert($banners);
+            }
+            return redirect()->back()->with('msg','Banner added with video database successfully!');
+        }
 
         if ($request->hasFile('banner_image')) {
             $image = $request->file('banner_image');
@@ -108,7 +170,13 @@ class BannerController extends Controller
             ->select('banner_image')
             ->where('id',$id)
             ->first();
-        unlink($data->banner_image);
+        try{
+            unlink($data->banner_image);
+            unlink($data->banner_video);
+
+        }catch (\Exception $E){
+
+        }
         $success = DB::table('banners')->where('id', '=', $id)->delete();
         return redirect()->back()->with('msg','Banner deleted with image  successfully!');
 

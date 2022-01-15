@@ -60,10 +60,10 @@
       7.20. Gallery
         7.20.1. LightBox
       7.21. Tables
-      7.22. Full Page 
-      7.23. Experience List 
-      7.24. Services 
-      7.25. Call to Action 
+      7.22. Full Page
+      7.23. Experience List
+      7.24. Services
+      7.25. Call to Action
       7.26. Back to Top Button
       7.27. Owl Carousel & Revolution Slider
       7.28. Striped Photos
@@ -497,7 +497,7 @@ body {
 }
 
 /* ------------------------------------------------------
-	    1.2.3. Table Row (Extension for 
+	    1.2.3. Table Row (Extension for
 	    the bootstrap grid system)
 	------------------------------------------------------ */
 .apo-table-row {
@@ -929,7 +929,7 @@ body {
 
 [data-bg-img-src] {
   background-size: cover;
-  background-position: center;
+  /*background-position: center;*/
   background-repeat: no-repeat;
 }
 
@@ -4234,7 +4234,7 @@ table {
 }
 
 /* ------------------------------------------------------
-        7.22. Full Page 
+        7.22. Full Page
     ------------------------------------------------------ */
 .apo-full-page-container {
   z-index: 2;
@@ -4503,7 +4503,7 @@ table {
 }
 
 /* ------------------------------------------------------
-        7.23. Experience List 
+        7.23. Experience List
     ------------------------------------------------------ */
 .apo-experience-list {
   margin-top: -35px;
@@ -4585,7 +4585,7 @@ table {
 }
 
 /* ------------------------------------------------------
-        7.24. Services 
+        7.24. Services
     ------------------------------------------------------ */
 .apo-services {
   margin-top: -30px;
@@ -4604,7 +4604,7 @@ table {
 }
 
 /* ------------------------------------------------------
-        7.25. Call to Action 
+        7.25. Call to Action
     ------------------------------------------------------ */
 .apo-cta {
   font-family: "Poppins", sans-serif;
@@ -8843,7 +8843,7 @@ table {
   .apo-header-section.apo-sticky.apo-sticked {
     position: relative;
   }
-  
+
 }
 
 @media all and (max-width: 650px) {

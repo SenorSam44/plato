@@ -21,7 +21,10 @@
           <!-- End Navigation Button-->
         </div>
         <div class="apo-header-item">
-          <!-- Logo--><a href="/" title="Home"><img src="{{ asset('frontend') }}/images/logo.png" alt="Logo"/></a>
+          <!-- Logo-->
+            <a href="/" title="Home">
+                <img class="dynamic-logo" src="{{ asset('frontend') }}/images/logo.png" alt="Logo"/>
+            </a>
           <!-- End Logo-->
         </div>
       </div>
@@ -64,7 +67,7 @@
                 </ul>
                 <!-- End of SubMenu-->
               </li>
-              <li class="apo-has-children"><a href="/services">Services</a>      
+              <li class="apo-has-children"><a href="/services">Services</a>
               </li>
               <li class="apo-has-children"><a href="/news">News</a>
               </li>
@@ -116,5 +119,28 @@
 
   }
 
+  .dynamic-logo{
+      width: 100px;
+      transform: scale(1);
+      transition: transform 0.5s ease-out;
+  }
+  .dynamic-logo:hover{
+      transform: scale(1.5);
+      transition: transform 0.5s ease;
+  }
+
 
 </style>
+
+<script>
+    let logo = document.querySelector('.dynamic-logo');
+    logo.addEventListener('mouseover', ()=> {
+        logo.src = '{{ asset('frontend') }}/images/logo_color.png';
+    });
+    logo.addEventListener('mouseout', ()=> {
+        setTimeout(()=>{
+            logo.src = '{{ asset('frontend') }}/images/logo.png';
+        }, 500 );
+    });
+
+</script>

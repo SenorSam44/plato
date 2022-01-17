@@ -47,6 +47,7 @@ Route::get('departments', [HomeController::class, 'departments']);
 Route::get('projects', [HomeController::class, 'projects']);
 Route::get('projects2', [HomeController::class, 'projects2']);
 Route::get('projects/{project}', [HomeController::class, 'singleProject']);
+Route::get('projects/{project}/modal', [HomeController::class, 'projectModal']);
 
 Route::get('project-category/{name}', [HomeController::class, 'categorizedProjects']);
 

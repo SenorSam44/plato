@@ -1,513 +1,346 @@
-@extends('frontend.home_layout')
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Basic page needs-->
+    <title>Home | Apolo</title>
+    <meta charset="UTF-8"/>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!-- Mobile specific metas-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <!-- Google Web Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unna"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli"/>
+    <!-- Vendor CSS-->
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/font-awesome.min.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/linearicons.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/apolo-icons.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/hamburgers.min.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/animate.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/fancybox/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" media="all" href="https://velikorodnov.com/html/apolo/vendors/revolution/css/settings.css"/>
+    <link rel="stylesheet" media="all" href="https://velikorodnov.com/html/apolo/vendors/revolution/css/layers.css"/>
+{{--    <link rel="stylesheet" media="all"--}}
+{{--          href="https://velikorodnov.com/html/apolo/vendors/revolution/css/navigation.css"/>--}}
 
-@section('content')
-    <!-- =======================* Section Start *======================= -->
-    <br><br><br>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/swiper/swiper.min.css"/>
 
-    <!-- =======================* Section Start *===================== -->
-      @foreach($single_project as $project)
-      @endforeach
-        <section class="works text-center section-padding">
-            <div class="container project-details">
-                <div class="row">
-                    <div class="col-lg-12 section-title" >
-                        <p>{{ $project->project_title }}</p>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/owl-carousel/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/mCustomScrollbar/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/arcticmodal/jquery.arcticmodal-0.3.css"/>
+    <!-- Theme CSS-->
+    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/style.css"/>
+    <!-- Vendor JS-->
+    <script src="{{ asset('frontend') }}/vendors/modernizr.js"></script>
+</head>
+<body>
+<!-- Preloader-->
+<div class="apo-preloader">
+    <div class="apo-preloader-outer">
+        <div class="apo-preloader-inner">
+            <div class="apo-loader">
+                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="" style="backpadding-top: 30px;">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Preloader-->
+<!-- Site Header-->
+<header id="header" class="apo-header apo-header-dark apo-header-bottom">
+    <div class="apo-header-section">
+        <div class="apo-header-component-first">
+            <div class="apo-header-items">
+{{--                <div class="apo-header-item">--}}
+{{--                    <!-- Navigation Button-->--}}
+{{--                    <div type="button" data-arctic-modal="#modal-nav"--}}
+{{--                         class="apo-header-button hamburger hamburger--emphatic apo-hamburger-clickable"><span--}}
+{{--                            class="hamburger-box"><span class="hamburger-inner"></span></span>--}}
+{{--                    </div>--}}
+{{--                    <!-- End Navigation Button-->--}}
+{{--                </div>--}}
+                <div class="apo-header-item">
+                    <!-- Logo-->
+                    <a href="/" title="Home" class="apo-logo"><img
+                            src="{{ asset('frontend') }}/images/logo.png"
+                            alt="Logo"/>
+                    </a>
+                    <!-- End Logo-->
+                </div>
+            </div>
+        </div>
+        <div class="apo-header-component-middle">
+            <div class="apo-header-items">
+                <div class="apo-header-item">
+                    <!-- Slider Thumbnails-->
+                    <nav class="apo-slider-thumbs apo-slider-thumbs-hr swiper-container">
+                        <button class="swiper-button-prev"><i class="icon icon-chevron-left"></i></button>
+                        <div class="swiper-wrapper">
+                            @for($i =1; $i<13; $i++)
+                                <?php $tempvar = 'project_image' . $i ?>
+                                @if(isset($single_project->$tempvar))
+                                    <div class="swiper-slide">
+                                        <div
+                                            data-bg-img-src="{{\Illuminate\Support\Facades\URL::to($single_project->$tempvar)}}"
+                                            class="apo-slider-thumb"></div>
+                                    </div>
+                                @endif
+                            @endfor
+                        </div>
+                        <button class="swiper-button-next"><i class="icon icon-chevron-right"></i></button>
+                    </nav>
+                    <!-- End Slider Thumbnails-->
+                </div>
+            </div>
+        </div>
+        <div class="apo-header-component-last">
+            <div class="apo-header-items">
+                <div class="apo-header-item">
+                    <!-- Like-->
+{{--                    <button type="button" class="apo-hover-btn"><span class="apo-hover-btn-tooltip">220</span><i--}}
+{{--                            class="icon icon-heart"></i></button>--}}
+                    <!-- End Like-->
+                </div>
+                <div class="apo-header-item">
+                    <!-- FullScreen-->
+                    <button type="button" class="apo-hover-btn apo-fullscreen-control"><i class="icon icon-expand"></i>
+                    </button>
+                    <!-- End FullScreen-->
+                </div>
+                <div class="apo-header-item">
+                    <!-- Info-->
+                    <button type="button"
+                            data-arctic-modal="/projects/{{$single_project->id}}/modal"
+                            data-arctic-modal-type="ajax"
+                            data-photo-title="The Deer"
+                            data-photo-meta="A Photo by Christian Carter"
+                            data-photo-info="[{&quot;name&quot;: &quot;Made In&quot;, &quot;value&quot;: &quot;August 2015&quot;}, {&quot;name&quot;: &quot;Model&quot;, &quot;value&quot;: &quot;Canon EOS 6D&quot;}, {&quot;name&quot;: &quot;ISO&quot;, &quot;value&quot;: &quot;400&quot;}, {&quot;name&quot;: &quot;Focal Length&quot;, &quot;value&quot;: &quot;14mm&quot;}, {&quot;name&quot;: &quot;Category&quot;, &quot;value&quot;: &quot;Nature, Landscape&quot;}, {&quot;name&quot;: &quot;Aperture&quot;, &quot;value&quot;: &quot;f/4&quot;}, {&quot;name&quot;: &quot;Exposure Time&quot;, &quot;value&quot;: &quot;1/40&quot;}]"
+                            class="apo-hover-btn">
+                        <i class="icon icon-menu-circle"></i>
+                    </button>
+                    <!-- End Info-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Site Header-->
+<!-- Page Content-->
+<div class="apo-page">
+    <div class="rev_slider_wrapper fullscreen-container">
+        <div id="rev-slider-1" class="rev_slider fullscreenbanner apo-revslider-theme">
+            <ul>
+                @for($i =1; $i<13; $i++)
+                    <?php $tempvar = 'project_image' . $i ?>
+
+                    @if(isset($single_project->$tempvar))
+                        <li data-transition="fade" data-speed="500">
+                            <img src="{{\Illuminate\Support\Facades\URL::to($single_project->$tempvar)}}" alt=""/>
+                        </li>
+                    @endif
+                @endfor
+            </ul>
+            <!-- Slider Actions -->
+            <div class="apo-revslider-controls apo-right">
+                <div class="apo-revslider-controls-item">
+                    <div class="apo-revslider-theme-nav-prev">
+                        <div class="apo-revslider-control-title">Prev</div>
+                        <i class="apo-icon-prev"></i>
+                    </div>
+                </div>
+                <div class="apo-revslider-controls-item apo-playing">
+                    <div class="apo-revslider-control-pause">
+                        <div class="apo-revslider-control-title">Pause</div>
+                        <i class="apo-icon-pause"></i>
+                    </div>
+                    <div class="apo-revslider-control-play">
+                        <div class="apo-revslider-control-title">Play</div>
+                        <i class="apo-icon-play"></i>
+                    </div>
+                </div>
+                <div class="apo-revslider-controls-item">
+                    <div class="apo-revslider-theme-nav-next">
+                        <div class="apo-revslider-control-title">Next</div>
+                        <i class="apo-icon-next"></i>
                     </div>
                 </div>
             </div>
-            <div class="container project-details">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="section-title">Project Information</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container project-details">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>Address <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->address }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>Land Area <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->land_area }}</p>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>Occuapation Type <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->occupation_type }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>Classification <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->classification }}</p>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>No. of Stories <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->no_of_stories }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>No. of Car Parking <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->no_of_car_parking }}</p>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>Apartment Size <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->apartment_size }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>No. of Apartment <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->no_of_apartment }}</p>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>No. of Lifts <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->no_of_lifts }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>No. of Stairs <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->no_of_stairs }}</p>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>No. of Generator <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->no_of_generator }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="section-subtitle"><b>Water Reservoir <span>:</span> </b></p>
-                        <p class="section-paragraph">{{ $project->water_reserve }}</p>
-                    </div>
-                </div>
-            </div>
-
+            <!-- End Slider Actions -->
+        </div>
+        <div class="apo-slider-fullscreen-controls">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="section-title2">Project Image</h3>
+                <div class="apo-hr-controls">
+                    <div class="apo-hr-controls-component-first">
+                        <div class="apo-hr-controls-items">
+                            <div class="apo-hr-controls-item">
+                                <!-- Like-->
+                                <button type="button" class="apo-hover-btn"><span
+                                        class="apo-hover-btn-tooltip">220</span><i class="icon icon-heart"></i></button>
+                            </div>
+                            <!-- End Like-->
+                        </div>
+                    </div>
+                    <div class="apo-hr-controls-component-middle">
+                        <div class="apo-hr-controls-items">
+                            <div class="apo-hr-controls-item">
+                                <button type="button" class="apo-fullscreen-control-close"><i
+                                        class="icon icon-cross"></i>Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apo-hr-controls-component-last">
+                        <div class="apo-hr-controls-items">
+                            <div class="apo-hr-controls-item">
+                                <!-- Slider Actions -->
+                                <div class="apo-revslider-controls apo-right">
+                                    <div class="apo-revslider-controls-item">
+                                        <div class="apo-revslider-theme-nav-prev">
+                                            <div class="apo-revslider-control-title">Prev</div>
+                                            <i class="apo-icon-prev"></i>
+                                        </div>
+                                    </div>
+                                    <div class="apo-revslider-controls-item apo-playing">
+                                        <div class="apo-revslider-control-pause">
+                                            <div class="apo-revslider-control-title">Pause</div>
+                                            <i class="apo-icon-pause"></i>
+                                        </div>
+                                        <div class="apo-revslider-control-play">
+                                            <div class="apo-revslider-control-title">Play</div>
+                                            <i class="apo-icon-play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="apo-revslider-controls-item">
+                                        <div class="apo-revslider-theme-nav-next">
+                                            <div class="apo-revslider-control-title">Next</div>
+                                            <i class="apo-icon-next"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Slider Actions -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row our-works">
-                      @if($project->project_image1)
-                        <article data-bg-img-src="{{asset(''.$project->project_image1)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a>{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a>{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif 
-                        
-                        @if($project->project_image2)
-                        <article data-bg-img-src="{{asset(''.$project->project_image2)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image3)
-                        <article data-bg-img-src="{{asset(''.$project->project_image3)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image4)
-                        <article data-bg-img-src="{{asset(''.$project->project_image5)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image5)
-                        <article data-bg-img-src="{{asset(''.$project->project_image5)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image7)
-                        <article data-bg-img-src="{{asset(''.$project->project_image7)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image7)
-                        <article data-bg-img-src="{{asset(''.$project->project_image7)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image8)
-                        <article data-bg-img-src="{{asset(''.$project->project_image8)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image9)
-                        <article data-bg-img-src="{{asset(''.$project->project_image9)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image10)
-                        <article data-bg-img-src="{{asset(''.$project->project_image10)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image11)
-                        <article data-bg-img-src="{{asset(''.$project->project_image11)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-
-                        @if($project->project_image12)
-                        <article data-bg-img-src="{{asset(''.$project->project_image12)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-                        @if($project->project_image1)
-                        <article data-bg-img-src="{{asset(''.$project->project_image1)}}" class="apo-striped-photo ">
-                            <div class="apo-striped-photo-description">
-                              <div class="apo-aligner-outer">
-                                <div class="apo-aligner-inner">
-                                  <ul class="apo-striped-photo-categories">
-                                    <li><a href="{{url('/projects/'.$project->id)}}">{{$project->category_name}}</a></li>
-                                  </ul>
-                                  <h2 class="apo-striped-photo-title">
-                                    <a href="{{url('/projects/'.$project->id)}}">{{$project->project_title}}</a>
-                                  </h2>
-                                  <div class="apo-striped-photo-meta">
-                                    <small>Made in {{$project->created_at}}</small>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </article><br>
-                        @endif
-
-
-                    </div> <!-- row our-works End-->
+        </div>
+    </div>
+</div>
+<!-- End Page Content-->
+<!-- Footer-->
+<!-- End Footer-->
+<!-- Modal Window-->
+<!--
+<div class="apo-d-none">
+    <div id="modal-nav" class="apo-modal apo-modal-fullscreen-nav">
+        <div class="container">
+            <div class="apo-section">
+                <div class="apo-grid apo-cols-4">
+                    <section class="apo-grid-col">
+                        <h5 class="apo-fullscreen-nav-title">Home</h5>
+                        <ul class="apo-fullscreen-nav-pages">
+                            <li><a href="index.html">Main With Left White Header</a></li>
+                            <li><a href="home_striped.html">Striped Page With Top Transparent Header</a></li>
+                            <li><a href="home_slider_with_left_dark_header.html">Slider With Left Dark Header</a></li>
+                            <li class="apo-active"><a href="home_slider_with_bottom_dark_header.html">Slider With Bottom
+                                    Dark Header</a></li>
+                            <li><a href="home_full_page_scroll_with_top_transparent_header.html">Full Page Scroll With
+                                    Top Transparent Header</a></li>
+                            <li><a href="home_personal.html">Personal With Left White Header</a></li>
+                            <li><a href="portfolio_grid_with_top_white_header.html">Grid Portfolio With Top White
+                                    Header</a></li>
+                            <li><a href="portfolio_masonry_with_top_dark_header.html">Masonry Portfolio With Top Dark
+                                    Header</a></li>
+                        </ul>
+                    </section>
+                    <section class="apo-grid-col">
+                        <h5 class="apo-fullscreen-nav-title">Pages</h5>
+                        <ul class="apo-fullscreen-nav-pages">
+                            <li><a href="pages_about_us.html">About Us</a></li>
+                            <li><a href="pages_about_me.html">About Me</a></li>
+                            <li><a href="pages_contact.html">Contact</a></li>
+                            <li><a href="extra_elements.html">Elements</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="RTL/index.html">RTL Version</a></li>
+                        </ul>
+                    </section>
+                    <section class="apo-grid-col">
+                        <h5 class="apo-fullscreen-nav-title">Portfolio</h5>
+                        <ul class="apo-fullscreen-nav-pages">
+                            <li><a href="portfolio_masonry_fit_width_4_columns.html">Masonry Fit Width 4 Columns</a>
+                            </li>
+                            <li><a href="portfolio_masonry_fit_width_3_columns.html">Masonry Fit Width 3 Columns</a>
+                            </li>
+                            <li><a href="portfolio_classic_sortable_4_columns.html">Classic Sortable 4 Columns</a></li>
+                            <li><a href="portfolio_single_post.html">Single Portfolio Post</a></li>
+                        </ul>
+                    </section>
+                    <section class="apo-grid-col">
+                        <h5 class="apo-fullscreen-nav-title">Blog</h5>
+                        <ul class="apo-fullscreen-nav-pages">
+                            <li><a href="blog_classic_sortable_3_columns.html">Classic Sortable 3 Columns</a></li>
+                            <li><a href="blog_classic_2_columns_with_sidebar.html">Classic 2 Columns With Sidebar</a>
+                            </li>
+                            <li><a href="blog_grid_2_columns.html">Grid 2 Columns</a></li>
+                            <li><a href="blog_element_sizing_4_columns.html">Element Sizing 4 Columns</a></li>
+                            <li><a href="blog_fit_width_4_columns.html">Fit Width 4 Columns</a></li>
+                            <li><a href="blog_single_post.html">Single Blog Post</a></li>
+                            <li><a href="blog_single_post_with_sidebar.html">Single Blog Post With Sidebar</a></li>
+                        </ul>
+                    </section>
                 </div>
+
+                <form class="apo-oneline-form">
+                    <input type="search" name="s" placeholder="Search this website"/>
+                    <button type="submit"><i class="icon icon-magnifier"></i></button>
+                </form>
             </div>
+        </div>
+        <div class="arctic-modal-close-container">
+            <button type="button" class="apo-close-btn arcticmodal-close"><i class="icon icon-cross"></i> Close</button>
+        </div>
+    </div>
+</div>
+-->
+<!-- End Modal Window-->
+<!-- Vendor JS-->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="{{ asset('frontend') }}/vendors/handlebars-v4.0.5.js"></script>
 
-            <footer id="footer" data-bg-img-src="images/footer_bg.png" class="apo-footer">
-                <div class="container">
-                  <div class="apo-widget-area apo-cols-4">
-                    <!-- Widget-->
-                    <section class="apo-widget apo-widget-size-1_7x apo-contact-info-widget">
-                      <h2 class="apo-widget-title">Say hi!</h2>
-                      <ul class="apo-contact-info">
-                        <li><a href="mailto:#">contact@yourwebsite.com</a></li>
-                        <li><a href="tel:#">+533 4929 295</a></li>
-                      </ul>
-                      <p>Copyright © 2017 Apolo. Designed by Ezwa Studio.</p>
-                    </section>
-                    <!-- End Widget-->
-                    <!-- Widget-->
-                    <section class="apo-widget apo-widget-size-0_65x">
-                      <h2 class="apo-widget-title">Navigation</h2>
-                      <ul>
-                        <li> <a href="#">Home</a></li>
-                        <li> <a href="#">Pages</a></li>
-                        <li> <a href="#">Portfolio</a></li>
-                        <li> <a href="#">Blog</a></li>
-                        <li> <a href="#">Contact</a></li>
-                      </ul>
-                    </section>
-                    <!-- End Widget-->
-                    <!-- Widget-->
-                    <section class="apo-widget apo-widget-size-0_65x">
-                      <h2 class="apo-widget-title">Information</h2>
-                      <ul>
-                        <li> <a href="#">Privacy Policy</a></li>
-                        <li> <a href="#">Terms of Use</a></li>
-                        <li> <a href="#">Legal</a></li>
-                        <li> <a href="#">Sitemap</a></li>
-                      </ul>
-                    </section>
-                    <!-- End Widget-->
-                    <!-- Widget-->
-                    <section class="apo-widget">
-                      <h2 class="apo-widget-title">Subscribe Newsletter</h2>
-                      <form class="apo-oneline-form apo-newsletter-form">
-                        <input type="email" name="email" placeholder="Email Address"/>
-                        <button type="submit"><i class="icon icon-arrow-right"></i></button>
-                      </form>
-                      <ul class="apo-hr-dotted-list">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                      </ul>
-                    </section>
-                    <!-- End Widget-->
-                  </div>
-                </div>
-              </footer>
-              <!-- End Footer-->
+<script src="{{ asset('frontend') }}/vendors/wt.validator.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/jquery.easing.1.3.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/mad.accordion.js"></script>
+<script src="{{ asset('frontend') }}/vendors/mad.customselect.js"></script>
+<script src="{{ asset('frontend') }}/vendors/mad.tabs.js"></script>
+<script src="{{ asset('frontend') }}/vendors/wat.counters.js"></script>
+<script src="{{ asset('frontend') }}/vendors/wt.jquery.nav.1.0.js"></script>
+<script src="{{ asset('frontend') }}/vendors/isotope.pkgd.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/imagesloaded.pkgd.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/fancybox/jquery.fancybox.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/appear.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/arcticmodal/jquery.arcticmodal-0.3.min.js"></script>
 
-        </section>
-        <!-- =======================* Section End *======================= -->
-
-@endsection
-
-
-<style type="text/css">
-
-  .works{
-    background: white !important;
-  }
-
-  .section-title{
-    color: black;
-    font-size: 26px;
-    display: block;
-  }
-  .section-title p{
-    color: black;
-    font-size: 26px;
-    display: block;
-    font-weight: 800;
-  }
-
-
-
-    .project-details{
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .project-details h3{
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-right: 15px; 
-    }
-
-    .project-details p{
-        padding-top: 0px;
-        padding-bottom: 0px;
-        margin: 0; 
-    }
-
-    .section-title{
-        font-size: 22px;
-        border: red 0px solid;
-        width: 100%;
-    }
-
-    
-
-    .section-title2{
-        font-size: 18px;
-        border: red 0px solid;
-        float: left;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .section-subtitle{
-        min-height: 50px;
-        font-size: 14px;
-        border: red 0px solid;
-        float: left;
-        margin: 0;
-        padding-right: 30px;
-        width: 30%;
-        text-align: left;
-    } .section-subtitle span{float: right;}
-    .section-paragraph{
-        text-align: left;
-        padding-top: 0; 
-        font-size: 14px;
-        border: red 0px solid;
-        padding-bottom: 10px; 
-        margin: 0;
-        width: 70%;
-        float: left;
-    }.section-paragraph p{
-        padding-top: 0; 
-        padding-left: 20px; 
-
-    }
-
-    @media (max-width: 767.98px) {
-        .section-subtitle {width: 50%;}
-        .section-paragraph{width: 50%;}
-
-    }
-
-
-    .zoom-icon{
-        height: 50px;
-        width: 50px;
-    }
-
-
-</style>
+<script src="{{ asset('frontend') }}/vendors/themepunch/jquery.themepunch.tools.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/themepunch/jquery.themepunch.revolution.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/swiper/swiper.min.js"></script>
+<script src="{{ asset('frontend') }}/vendors/fullpage/jquery.fullpage.min.js"></script>
+<!-- Theme JS-->
+<script src="{{ asset('frontend') }}/js/apolo.core.js"></script>
+<script src="{{ asset('frontend') }}/js/modules/apolo.newsletter.js"></script>
+<script src="{{ asset('frontend') }}/js/modules/apolo.sameheight.js"></script>
+<script src="{{ asset('frontend') }}/js/modules/apolo.appear.js"></script>
+<script src="{{ asset('frontend') }}/js/modules/apolo.isotope.js"></script>
+<script src="{{ asset('frontend') }}/js/modules/apolo.fullpage.js"></script>
+<script src="{{ asset('frontend') }}/js/apolo.init.js"></script>
+</body>
+</html>

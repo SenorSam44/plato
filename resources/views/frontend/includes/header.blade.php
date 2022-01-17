@@ -3,7 +3,7 @@
   <div class="apo-preloader-outer">
     <div class="apo-preloader-inner">
       <div class="apo-loader">
-        <img src="{{ asset('frontend') }}/images/logo.png" alt="" style="padding-top: 30px;">
+        <img src="{{ asset('frontend') }}/images/logo_color.png" alt="" style="padding-top: 30px;">
       </div>
     </div>
   </div>
@@ -121,12 +121,7 @@
 
   .dynamic-logo{
       width: 100px;
-      transform: scale(1);
-      transition: transform 0.5s ease-out;
-  }
-  .dynamic-logo:hover{
-      transform: scale(1.5);
-      transition: transform 0.5s ease;
+      /*transition: transform 0.5s ease-out;*/
   }
 
 
@@ -138,9 +133,7 @@
         logo.src = '{{ asset('frontend') }}/images/logo_color.png';
     });
     logo.addEventListener('mouseout', ()=> {
-        setTimeout(()=>{
-            logo.src = '{{ asset('frontend') }}/images/logo.png';
-        }, 500 );
+        logo.src = '{{ asset('frontend') }}/images/logo.png';
     });
 
 </script>

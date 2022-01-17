@@ -68,8 +68,21 @@ class HomeController extends Controller
                     ->where('projects.publication_status','=','1')
                     ->where('categories.publication_status','=','1')
                     ->where('projects.id','=',$id)
-                    ->get();
+                    ->first();
         return view('frontend.single.project',['single_project'=>$single_project]);
+    }
+
+    public function projectModal($id)
+    {
+        $project = DB::table('categories')
+            ->join('projects', 'categories.id','=','projects.category_id' )
+            ->select('projects.*','categories.category_name')
+            ->where('projects.id','=',$id)
+            ->first();
+
+        return view('frontend.includes.project_modal',[
+            'project'=>$project
+        ]);
     }
 
     public function categorizedProjects($name)
@@ -98,7 +111,7 @@ class HomeController extends Controller
     {
         $services = DB::table('services')
             ->select('services.*')
-            ->get();        
+            ->get();
             return view('frontend.manages.services',['services'=>$services]);
     }
 
@@ -110,9 +123,9 @@ class HomeController extends Controller
             ->orderByDesc('created_at')
             ->where('news.publication_status',1)
             ->paginate(12);
-            
+
         return view('frontend.manages.news',['news'=>$news]);
-    }    
+    }
 
     public function reviews()
     {
@@ -139,7 +152,7 @@ class HomeController extends Controller
             ->select('categories.*')
             ->where('categories.id','=',$id)
             ->get();
-    
+
         return view('frontend.single.category',['categories'=>$categories]);
     }
 
@@ -158,7 +171,7 @@ class HomeController extends Controller
         $services = DB::table('services')
             ->select('services.*')
             ->where('services.id','=',$id)
-            ->get();        
+            ->get();
             return view('frontend.single.service',['services'=>$services]);
     }
 
@@ -171,7 +184,7 @@ class HomeController extends Controller
             ->where('news.id','=',$id)
             ->get();
         return view('frontend.single.news',['news'=>$news]);
-    }    
+    }
 
     public function review($id)
     {

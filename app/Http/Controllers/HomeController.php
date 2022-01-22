@@ -186,18 +186,24 @@ class HomeController extends Controller
         return view('frontend.single.news',['news'=>$news]);
     }
 
-    public function review($id)
+    public function review()
     {
-        $reviews = DB::table('reviews')
-            ->select('reviews.*')
-            ->where('reviews.id','=',$id)
-            ->get();
-        return view('frontend.single.review',['reviews'=>$reviews]);
+//        $reviews = DB::table('reviews')
+//            ->select('reviews.*')
+//            ->where('reviews.id','=',$id)
+//            ->get();
+        return view('frontend.single.review');
     }
 
     public function about()
     {
-        return view('frontend.single.about');
+        $abouts = DB::table('abouts')
+            ->select('abouts.*')
+            ->where('abouts.publication_status','=',1)
+            ->get();
+        return view('frontend.single.about', [
+            'abouts' => $abouts,
+        ]);
     }
 
     public function contacts()

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\V1\AdvisorController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -81,8 +82,8 @@ Route::get('reviews/{id}', [HomeController::class, 'review']);
 
 //Review Client side
 
-Route::get('review', [ReviewController::class, 'create']);
-Route::get('reviews', [ReviewController::class, 'index']);
+Route::get('review', [HomeController::class, 'review']);
+Route::get('reviews', [HomeController::class, 'reviews']);
 Route::post('reviews', [ReviewController::class, 'store']);
 
 
@@ -138,6 +139,17 @@ Route::middleware('auth:web')->group(function () {
 	    Route::post('/activate-member', [MemberController::class, 'activateMember']);
 	    Route::post('/deactivate-member', [MemberController::class, 'deactivateMember']);
 
+	    //advisor
+        Route::get('advisor', [AdvisorController::class, 'create']);
+        Route::get('advisors', [AdvisorController::class, 'index']);
+        Route::post('advisors', [AdvisorController::class, 'store']);
+        Route::get('advisors/{advisor}', [AdvisorController::class, 'show']);
+        Route::post('advisors/{advisor}', [AdvisorController::class, 'update']);
+        Route::post('delete-advisor', [AdvisorController::class, 'destroy']);
+
+        Route::post('/activate-advisor', [AdvisorController::class, 'activateAdvisor']);
+        Route::post('/deactivate-advisor', [AdvisorController::class, 'deactivateAdvisor']);
+
 	    //Projects
 		Route::get('project', [ProjectController::class, 'create']);
 		Route::get('projects', [ProjectController::class, 'index']);
@@ -171,9 +183,9 @@ Route::middleware('auth:web')->group(function () {
 	    Route::post('/deactivate-service', [ServiceController::class, 'deactivateService']);
 
 		//Review
-		//Route::get('review', [ReviewController::class, 'create']);
+		Route::get('review', [ReviewController::class, 'create']);
 		Route::get('reviews', [ReviewController::class, 'manageReviews']);
-		// Route::post('reviews', [ReviewController::class, 'store']);
+		 Route::post('reviews', [ReviewController::class, 'store']);
 		Route::get('reviews/{review}', [ReviewController::class, 'show']);
 		Route::post('reviews/{review}', [ReviewController::class, 'update']);
 		Route::post('delete-review', [ReviewController::class, 'destroy']);

@@ -44,19 +44,19 @@ class AboutController extends Controller
         $max = $dep_id->max('id')+1;
 
         if ($request->hasFile('about_image')) {
-            
+
             $image = $request->file('about_image');
             $name = $max.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('uploaded_images/abouts');
+            $destinationPath = public_path('../../public_html/uploaded_images/abouts');
             $image->move($destinationPath, $name);
             //$this->save();
 
             //$totalPathName = 'public/uploaded_images/'.$name;
-            //print_r($totalPathName) ;  
+            //print_r($totalPathName) ;
             $totalPathName = 'uploaded_images/abouts/'.$name;
             $abouts['about_image'] = $totalPathName;
             $success = DB::table('abouts')->insert($abouts);
-            return redirect()->back()->with('msg','About added with image database successfully!'); 
+            return redirect()->back()->with('msg','About added with image database successfully!');
         }
 
         $success = DB::table('abouts')->insert($abouts);
@@ -83,13 +83,13 @@ class AboutController extends Controller
         if ($request->hasFile('about_image')) {
             $image = $request->file('about_image');
             $name = $id.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('uploaded_images\abouts');
+            $destinationPath = public_path('../../public_html/uploaded_images\abouts');
             $image->move($destinationPath, $name);
-  
+
             $totalPathName = 'uploaded_images/abouts/'.$name;
             $abouts['about_image'] = $totalPathName;
             $success = DB::table('abouts')->where('id','=',$id)->update($abouts);
-            return redirect()->back()->with('msg','About added with image database successfully!'); 
+            return redirect()->back()->with('msg','About added with image database successfully!');
         }
 
         $success = DB::table('abouts')->where('id','=',$id)->update($abouts);
@@ -109,7 +109,7 @@ class AboutController extends Controller
         unlink($data->about_image);
         $success = DB::table('abouts')->where('id', '=', $id)->delete();
         return redirect()->back()->with('msg','About deleted with image  successfully!');
-        
+
     }
 
     public function activateAbout(Request $request){

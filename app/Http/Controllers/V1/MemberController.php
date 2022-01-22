@@ -38,22 +38,22 @@ class MemberController extends Controller
         $max = $member_id->max('id')+1;
 
         if ($request->hasFile('member_image')) {
-            
+
             $image = $request->file('member_image');
             $name = $max.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('uploaded_images/members');
+            $destinationPath = public_path('../../public_html/uploaded_images/members');
             $image->move($destinationPath, $name);
             //$this->save();
 
             //$totalPathName = 'public/uploaded_images/'.$name;
-            //print_r($totalPathName) ;  
+            //print_r($totalPathName) ;
             $totalPathName = 'uploaded_images/members/'.$name;
             $members['member_image'] = $totalPathName;
             $success = DB::table('members')->insert($members);
-            return redirect()->back()->with('msg','Member added with image database successfully!'); 
+            return redirect()->back()->with('msg','Member added with image database successfully!');
         }
 
-        $success = DB::table('members')->insert($news);
+        $success = DB::table('members')->insert($members);
         return redirect()->back()->with('msg','Member added without image database successfully!');
 
     }
@@ -79,13 +79,13 @@ class MemberController extends Controller
         if ($request->hasFile('member_image')) {
             $image = $request->file('member_image');
             $name = $id.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('uploaded_images/members');
+            $destinationPath = public_path('../../public_html/uploaded_images/members');
             $image->move($destinationPath, $name);
-  
+
             $totalPathName = 'uploaded_images/members/'.$name;
             $members['member_image'] = $totalPathName;
             $success = DB::table('members')->where('id','=',$id)->update($members);
-            return redirect()->back()->with('msg','Member updated with image successfully!'); 
+            return redirect()->back()->with('msg','Member updated with image successfully!');
         }
 
         $success = DB::table('members')->where('id','=',$id)->update($members);
@@ -103,7 +103,7 @@ class MemberController extends Controller
         unlink($data->member_image);
         $success = DB::table('members')->where('id', '=', $id)->delete();
         return redirect()->back()->with('msg','Member deleted with image  successfully!');
-        
+
     }
 
     public function activateMember(Request $request){

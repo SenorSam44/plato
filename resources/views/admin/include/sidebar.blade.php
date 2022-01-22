@@ -14,7 +14,7 @@
         <li>
             <a href="{{ URL::to('/admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
-        
+
         <li>
             <a href="#"><i class="fa fa-info fa-fw"></i> About <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -96,7 +96,20 @@
                     <a href="{{URL::to('admin/members')}}">Manage Team Members</a>
                 </li>
             </ul>
-        </li>        
+        </li>
+
+        <li>
+            <a href="#"><i class="fa fa-users fa-fw"></i> Advisors <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{URL::to('admin/advisor')}}">Add Advisor</a>
+                </li>
+                <li>
+                    <a href="{{URL::to('admin/advisors')}}">Manage Advisors</a>
+                </li>
+            </ul>
+        </li>
+
 
         <li>
             <a href="#"><i class="fa fa-braille fa-fw"></i> Client Reviews <span class="fa arrow"></span></a>

@@ -16,12 +16,12 @@ class ReviewController extends Controller
             ->orderByDesc('reviews.created_at')
             ->where('reviews.publication_status','=','1')
             ->get();
-        return view('frontend.manages.reviews',['reviews'=>$reviews]);
+        return view('admin.review.manageReview',['reviews'=>$reviews]);
     }
- 
+
     public function create()
     {
-        return view('frontend.single.review');
+        return view('admin.review.addReview');
     }
 
     public function store(Request $request)
@@ -53,10 +53,10 @@ class ReviewController extends Controller
                 $totalPathName = 'uploaded_images/reviews/'.$name;
                 $reviews['user_image'] = $totalPathName;
                 $success = DB::table('reviews')->insert($reviews);
-                return redirect()->back()->with('msg','Review added with image database successfully!'); 
+                return redirect()->back()->with('msg','Review added with image database successfully!');
             }
 
-            $success = DB::table('reviews')->insert($news);
+            $success = DB::table('reviews')->insert($reviews);
             return redirect()->back()->with('msg','Review added without image database successfully!');
         }
     }
@@ -94,11 +94,11 @@ class ReviewController extends Controller
             $name = $id.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('uploaded_images/reviews');
             $image->move($destinationPath, $name);
-  
+
             $totalPathName = 'uploaded_images/reviews/'.$name;
             $reviews['user_image'] = $totalPathName;
             $success = DB::table('reviews')->where('id','=',$id)->update($reviews);
-            return redirect()->back()->with('msg','Review updated with image successfully!'); 
+            return redirect()->back()->with('msg','Review updated with image successfully!');
         }
 
         $success = DB::table('reviews')->where('id','=',$id)->update($reviews);
@@ -116,7 +116,7 @@ class ReviewController extends Controller
         unlink($data->user_image);
         $success = DB::table('reviews')->where('id', '=', $id)->delete();
         return redirect()->back()->with('msg','Review deleted with image  successfully!');
-        
+
     }
 
     public function activateReview(Request $request){

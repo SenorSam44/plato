@@ -112,7 +112,8 @@ class HomeController extends Controller
         $services = DB::table('services')
             ->select('services.*')
             ->get();
-            return view('frontend.manages.services',['services'=>$services]);
+
+        return view('frontend.manages.services', ['services' => $services]);
     }
 
     public function news()

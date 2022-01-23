@@ -27,18 +27,74 @@
     <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/fancybox/jquery.fancybox.min.css"/>
     <link rel="stylesheet" media="all" href="https://velikorodnov.com/html/apolo/vendors/revolution/css/settings.css"/>
     <link rel="stylesheet" media="all" href="https://velikorodnov.com/html/apolo/vendors/revolution/css/layers.css"/>
-{{--    <link rel="stylesheet" media="all"--}}
-{{--          href="https://velikorodnov.com/html/apolo/vendors/revolution/css/navigation.css"/>--}}
+    {{--    <link rel="stylesheet" media="all"--}}
+    {{--          href="https://velikorodnov.com/html/apolo/vendors/revolution/css/navigation.css"/>--}}
 
     <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/swiper/swiper.min.css"/>
 
     <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/owl-carousel/assets/owl.carousel.min.css"/>
-    <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/mCustomScrollbar/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" media="all"
+          href="{{ asset('frontend') }}/vendors/mCustomScrollbar/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/vendors/arcticmodal/jquery.arcticmodal-0.3.css"/>
     <!-- Theme CSS-->
     <link rel="stylesheet" media="all" href="{{ asset('frontend') }}/css/style.css"/>
     <!-- Vendor JS-->
     <script src="{{ asset('frontend') }}/vendors/modernizr.js"></script>
+
+    <style>
+        @media (min-width: 728px) {
+            .apo-header-component-first {
+                padding-left: 50px;
+            }
+        }
+
+        .dynamic-logo {
+            width: 100px;
+        }
+
+        @media (max-width: 728px) {
+            .apo-header-section, .apo-hr-controls {
+                display: flex !important;
+                justify-content: space-between;
+            }
+
+            .apo-hr-controls{
+                display: inline;
+                flex-direction: column-reverse;
+            }
+
+
+            .apo-fullscreen-control {
+                display: inline-block;
+            }
+
+            .apo-header-component-first, .apo-header-component-middle, .apo-header-component-last, .apo-header-component-first .apo-header-items, .apo-header-component-middle .apo-header-items, .apo-header-component-last .apo-header-items .apo-header-item:not(:first-child) {
+                display: inline-block !important;
+                margin: auto;
+            }
+
+            .apo-header-component-last .apo-header-items .apo-header-item:first-child, .apo-hr-controls-component-first{
+                display: none;
+            }
+
+            .apo-header-component-last .apo-header-items .apo-header-item:not(:first-child) {
+                margin: 0 10px;
+            }
+
+            .apo-header-component-first .apo-header-items .apo-header-item {
+                margin-right: 0;
+            }
+
+            .apo-header-component-last, .apo-header-component-first {
+                max-width: max(33vw, 200px);
+            }
+
+            .apo-header-component-first .apo-header-items,.apo-header-component-last .apo-header-items{
+                margin: 0!important;
+            }
+
+        }
+    </style>
 </head>
 <body>
 <!-- Preloader-->
@@ -55,19 +111,20 @@
 <!-- Site Header-->
 <header id="header" class="apo-header apo-header-dark apo-header-bottom">
     <div class="apo-header-section">
-        <div class="apo-header-component-first">
+        <div class="apo-header-component-first dynamic-logo-wrapper">
             <div class="apo-header-items">
-{{--                <div class="apo-header-item">--}}
-{{--                    <!-- Navigation Button-->--}}
-{{--                    <div type="button" data-arctic-modal="#modal-nav"--}}
-{{--                         class="apo-header-button hamburger hamburger--emphatic apo-hamburger-clickable"><span--}}
-{{--                            class="hamburger-box"><span class="hamburger-inner"></span></span>--}}
-{{--                    </div>--}}
-{{--                    <!-- End Navigation Button-->--}}
-{{--                </div>--}}
+                {{--                <div class="apo-header-item">--}}
+                {{--                    <!-- Navigation Button-->--}}
+                {{--                    <div type="button" data-arctic-modal="#modal-nav"--}}
+                {{--                         class="apo-header-button hamburger hamburger--emphatic apo-hamburger-clickable"><span--}}
+                {{--                            class="hamburger-box"><span class="hamburger-inner"></span></span>--}}
+                {{--                    </div>--}}
+                {{--                    <!-- End Navigation Button-->--}}
+                {{--                </div>--}}
                 <div class="apo-header-item">
                     <!-- Logo-->
                     <a href="/" title="Home" class="apo-logo"><img
+                            class="dynamic-logo"
                             src="{{ asset('frontend') }}/images/logo.png"
                             alt="Logo"/>
                     </a>
@@ -99,13 +156,13 @@
                 </div>
             </div>
         </div>
-        <div class="apo-header-component-last">
+        <div class="apo-header-component-last" style="display: flex; justify-content: end; margin: auto 0;">
             <div class="apo-header-items">
                 <div class="apo-header-item">
                     <!-- Like-->
-{{--                    <button type="button" class="apo-hover-btn"><span class="apo-hover-btn-tooltip">220</span><i--}}
-{{--                            class="icon icon-heart"></i></button>--}}
-                    <!-- End Like-->
+                {{--                    <button type="button" class="apo-hover-btn"><span class="apo-hover-btn-tooltip">220</span><i--}}
+                {{--                            class="icon icon-heart"></i></button>--}}
+                <!-- End Like-->
                 </div>
                 <div class="apo-header-item">
                     <!-- FullScreen-->
@@ -233,84 +290,21 @@
         </div>
     </div>
 </div>
-<!-- End Page Content-->
-<!-- Footer-->
-<!-- End Footer-->
-<!-- Modal Window-->
-<!--
-<div class="apo-d-none">
-    <div id="modal-nav" class="apo-modal apo-modal-fullscreen-nav">
-        <div class="container">
-            <div class="apo-section">
-                <div class="apo-grid apo-cols-4">
-                    <section class="apo-grid-col">
-                        <h5 class="apo-fullscreen-nav-title">Home</h5>
-                        <ul class="apo-fullscreen-nav-pages">
-                            <li><a href="index.html">Main With Left White Header</a></li>
-                            <li><a href="home_striped.html">Striped Page With Top Transparent Header</a></li>
-                            <li><a href="home_slider_with_left_dark_header.html">Slider With Left Dark Header</a></li>
-                            <li class="apo-active"><a href="home_slider_with_bottom_dark_header.html">Slider With Bottom
-                                    Dark Header</a></li>
-                            <li><a href="home_full_page_scroll_with_top_transparent_header.html">Full Page Scroll With
-                                    Top Transparent Header</a></li>
-                            <li><a href="home_personal.html">Personal With Left White Header</a></li>
-                            <li><a href="portfolio_grid_with_top_white_header.html">Grid Portfolio With Top White
-                                    Header</a></li>
-                            <li><a href="portfolio_masonry_with_top_dark_header.html">Masonry Portfolio With Top Dark
-                                    Header</a></li>
-                        </ul>
-                    </section>
-                    <section class="apo-grid-col">
-                        <h5 class="apo-fullscreen-nav-title">Pages</h5>
-                        <ul class="apo-fullscreen-nav-pages">
-                            <li><a href="pages_about_us.html">About Us</a></li>
-                            <li><a href="pages_about_me.html">About Me</a></li>
-                            <li><a href="pages_contact.html">Contact</a></li>
-                            <li><a href="extra_elements.html">Elements</a></li>
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="RTL/index.html">RTL Version</a></li>
-                        </ul>
-                    </section>
-                    <section class="apo-grid-col">
-                        <h5 class="apo-fullscreen-nav-title">Portfolio</h5>
-                        <ul class="apo-fullscreen-nav-pages">
-                            <li><a href="portfolio_masonry_fit_width_4_columns.html">Masonry Fit Width 4 Columns</a>
-                            </li>
-                            <li><a href="portfolio_masonry_fit_width_3_columns.html">Masonry Fit Width 3 Columns</a>
-                            </li>
-                            <li><a href="portfolio_classic_sortable_4_columns.html">Classic Sortable 4 Columns</a></li>
-                            <li><a href="portfolio_single_post.html">Single Portfolio Post</a></li>
-                        </ul>
-                    </section>
-                    <section class="apo-grid-col">
-                        <h5 class="apo-fullscreen-nav-title">Blog</h5>
-                        <ul class="apo-fullscreen-nav-pages">
-                            <li><a href="blog_classic_sortable_3_columns.html">Classic Sortable 3 Columns</a></li>
-                            <li><a href="blog_classic_2_columns_with_sidebar.html">Classic 2 Columns With Sidebar</a>
-                            </li>
-                            <li><a href="blog_grid_2_columns.html">Grid 2 Columns</a></li>
-                            <li><a href="blog_element_sizing_4_columns.html">Element Sizing 4 Columns</a></li>
-                            <li><a href="blog_fit_width_4_columns.html">Fit Width 4 Columns</a></li>
-                            <li><a href="blog_single_post.html">Single Blog Post</a></li>
-                            <li><a href="blog_single_post_with_sidebar.html">Single Blog Post With Sidebar</a></li>
-                        </ul>
-                    </section>
-                </div>
 
-                <form class="apo-oneline-form">
-                    <input type="search" name="s" placeholder="Search this website"/>
-                    <button type="submit"><i class="icon icon-magnifier"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="arctic-modal-close-container">
-            <button type="button" class="apo-close-btn arcticmodal-close"><i class="icon icon-cross"></i> Close</button>
-        </div>
-    </div>
-</div>
--->
-<!-- End Modal Window-->
-<!-- Vendor JS-->
+<script>
+    let logo = document.querySelector('.dynamic-logo');
+    let logo_wrapper = document.querySelector('.dynamic-logo-wrapper');
+    console.log("f")
+    logo_wrapper.addEventListener('mouseover', () => {
+        console.log("f")
+        logo.src = '{{ asset('frontend') }}/images/logo_color.png';
+    });
+    logo_wrapper.addEventListener('mouseout', () => {
+        logo.src = '{{ asset('frontend') }}/images/logo.png';
+    });
+
+</script>
+
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="{{ asset('frontend') }}/vendors/handlebars-v4.0.5.js"></script>

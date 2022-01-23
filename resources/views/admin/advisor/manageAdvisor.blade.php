@@ -31,7 +31,7 @@
                 <td>{{ $advisor->advisor_description}}</td>
                 <td><img src="{{asset($advisor->advisor_image)}}" style="height: 70px; width: 100px"></td>
 
-                <td><?php if($advisor->publication_status == 1){ ?> <a style="color: green">Acive</a><?php } else{ ?> <a style="color: darkred">Deactive</a><?php } ?></td>
+                <td><?php if($advisor->publication_status == 1){ ?> <a style="color: green">Active</a><?php } else{ ?> <a style="color: darkred">Deactive</a><?php } ?></td>
                 <td>
                     <?php if($advisor->publication_status == 1 ){ ?>
                         <form method="post" action="{{URL::to('admin/deactivate-advisor')}}" enctype="multipart/form-data">

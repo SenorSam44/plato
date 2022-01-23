@@ -12,7 +12,7 @@
 <!-- Site Header-->
 <!-- Site Header-->
 <header id="header" class="apo-header apo-header-transparent" >
-  <div class="apo-header-section" >
+  <div class="apo-header-section d-block d-md-flex" >
     <div class="apo-header-component-first" >
       <div class="apo-header-items">
         <div class="apo-header-item">
@@ -84,7 +84,7 @@
           <!-- Social Networks-->
           <ul class="apo-social-networks">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
           </ul>
           <!-- End Social Networks-->
@@ -115,7 +115,15 @@
     }
   }
 
-  .apo-header-section .apo-header-component-first{
+  @media screen and (max-width: 728px) {
+
+      .apo-header-button.hamburger{
+          display: none;
+      }
+
+      .apo-header-component-first, .apo-header-component-middle, .apo-header-component-last, .apo-header-items{
+          display: inline;
+      }
 
   }
 

@@ -51,19 +51,17 @@ class NewsController extends Controller
         $max = $dep_id->max('id')+1;
 
         if ($request->hasFile('news_image')) {
-            
+
             $image = $request->file('news_image');
             $name = $max.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('uploaded_images/news');
             $image->move($destinationPath, $name);
-            //$this->save();
 
-            //$totalPathName = 'public/uploaded_images/'.$name;
-            //print_r($totalPathName) ;  
+
             $totalPathName = 'uploaded_images/news/'.$name;
             $news['news_image'] = $totalPathName;
             $success = DB::table('news')->insert($news);
-            return redirect()->back()->with('msg','News added with image database successfully!'); 
+            return redirect()->back()->with('msg','News added with image database successfully!');
         }
 
         $success = DB::table('news')->insert($news);
@@ -93,11 +91,11 @@ class NewsController extends Controller
             $name = $id.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('uploaded_images/news');
             $image->move($destinationPath, $name);
-  
+
             $totalPathName = 'uploaded_images/news/'.$name;
             $news['news_image'] = $totalPathName;
             $success = DB::table('news')->where('id','=',$id)->update($news);
-            return redirect()->back()->with('msg','News updated with image successfully!'); 
+            return redirect()->back()->with('msg','News updated with image successfully!');
         }
 
         $success = DB::table('news')->where('id','=',$id)->update($news);
@@ -110,7 +108,7 @@ class NewsController extends Controller
         $id = $request->inputId;
         $success = DB::table('news')->where('id', '=', $id)->delete();
         return redirect()->back()->with('msg','News deleted with image  successfully!');
-        
+
     }
 
     public function activateNews(Request $request){

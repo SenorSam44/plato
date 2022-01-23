@@ -11,15 +11,21 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-7"><img src="frontend/images/img-75.jpg" alt=""/></div>
-                    <div class="col-lg-3 col-lg-offset-0-5 col-md-10 col-md-offset-1">
-                        <h2>Creative Studio</h2>
-                        <p class="apo-section-sub-title">We are Apolo, an innovative studio that love creating design,
+                    <div class="col-lg-3 col-md-10">
+                        <h2>About Us</h2>
+                        <p class="apo-section-sub-title" style="font-size: 18px">We are Apolo, an innovative studio that love creating design,
                             art and photography products. </p>
-                        <hr class="apo-divider-small apo-divider-large-offset"/>
                         <div class="apo-services">
                             @foreach($abouts as $about)
                                 <div class="apo-service">
-                                    <p><strong>{{$about->about_title}} </strong>{{$about->about_description}}</p>
+                                    <p><strong>{{$about->about_title}} </strong></p>
+                                    <ul class="white-bullet-list">
+                                        <?php
+                                        $description = $about->about_description;
+                                        $description = preg_replace("/\r\n|\r|\n/", '<li>', $description);
+                                        echo '<li>', $description;
+                                        ?>
+                                    </ul>
                                 </div>
                             @endforeach
                             {{--                            <div class="apo-service">--}}
@@ -38,7 +44,7 @@
         </div>
         <!-- End Content Section-->
         <!-- Content Section-->
-        <div class="apo-section">
+        <div class="apo-section" style='font-family: "Unna", sans-serif;'>
             <div class="container"><img src="frontend/images/img-76.jpg" alt="" class="aligncenter"/>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-1 col-sm-6">
@@ -62,7 +68,7 @@
             <div class="container">
                 <div class="apo-cta">
                     <p>We are currently taking on new projects. Would you like to discuss yours?</p>
-                    <footer><a href="pages_contact.html" class="apo-btn apo-btn-small apo-btn-white">Contact Us</a>
+                    <footer><a href="/contacts" class="apo-btn apo-btn-small apo-btn-white">Contact Us</a>
                     </footer>
                 </div>
             </div>
@@ -190,7 +196,7 @@
                 <div class="container">
                     <h3 class="heading-2  section-title text-left">What Our Clients Say</h3>
                     <div class="clearfix">
-                        <button class="btn btn-primary" onclick="window.location.href='/review'">Add Review</button>
+                        <button class="btn btn-primary" style="background-color: #Ef3e10; border-color: red" onclick="window.location.href='/review'">Add Review</button>
                     </div>
                     <div id="testimonialSlider" class="owl-carousel owl-theme">
                         <?php
@@ -290,8 +296,34 @@
             font-family: ariel !important;
         }
 
-        .section-title {
-            font-family: Tw cen mt !important;
+        /*.section-title {*/
+        /*    font-family: Tw cen mt !important;*/
+        /*}*/
+
+
+        .apo-services .apo-service{
+            padding-top: 10px;
+        }
+
+        .apo-service p{
+            margin-bottom: 0;
+        }
+
+        .white-bullet-list li:before{
+            content: '\2022 ';
+            color: white;
+            margin-right: 10px;
+        }
+
+        .section-title{
+            font-family: 'Abril Fatface', sans-serif;
+        }
+
+        .section-title::before{
+            background: none;
+        }
+        .counter-flex .counter-box .counter-icon:after{
+            background-color: white;
         }
 
     </style>

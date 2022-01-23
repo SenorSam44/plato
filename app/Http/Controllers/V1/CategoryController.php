@@ -46,19 +46,17 @@ class CategoryController extends Controller
         $max = $cat_id->max('id')+1;
 
         if ($request->hasFile('category_image')) {
-            
+
             $image = $request->file('category_image');
             $name = $max.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('uploaded_images/categories');
             $image->move($destinationPath, $name);
-            //$this->save();
 
-            //$totalPathName = 'public/uploaded_images/'.$name;
-            //print_r($totalPathName) ;  
+
             $totalPathName = 'uploaded_images/categories/'.$name;
             $categories['category_image'] = $totalPathName;
             $success = DB::table('categories')->insert($categories);
-            return redirect()->back()->with('msg','Category added with image database successfully!'); 
+            return redirect()->back()->with('msg','Category added with image database successfully!');
         }
 
         $success = DB::table('categories')->insert($categories);
@@ -88,11 +86,11 @@ class CategoryController extends Controller
             $name = $id.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('uploaded_images/categories');
             $image->move($destinationPath, $name);
-  
+
             $totalPathName = 'uploaded_images/categories/'.$name;
             $categories['category_image'] = $totalPathName;
             $success = DB::table('categories')->where('id','=',$id)->update($categories);
-            return redirect()->back()->with('msg','Category updated with image successfully!'); 
+            return redirect()->back()->with('msg','Category updated with image successfully!');
         }
 
         $success = DB::table('categories')->where('id','=',$id)->update($categories);
@@ -110,7 +108,7 @@ class CategoryController extends Controller
         unlink($data->department_image);
         $success = DB::table('categories')->where('id', '=', $id)->delete();
         return redirect()->back()->with('msg','Category deleted with image  successfully!');
-        
+
     }
 
     public function activateDepartment(Request $request){

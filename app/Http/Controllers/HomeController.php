@@ -179,10 +179,10 @@ class HomeController extends Controller
     {
         $news = DB::table('news')
             ->join('categories','categories.id','news.category_id')
-            ->select('categories.category_name')
-            ->select('news.*')
+            ->select('news.*', 'categories.id', "categories.category_name")
             ->where('news.id','=',$id)
-            ->get();
+            ->first();
+//        dd($news);
         return view('frontend.single.news',['news'=>$news]);
     }
 

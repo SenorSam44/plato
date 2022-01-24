@@ -12,7 +12,7 @@
 <!-- Site Header-->
 <!-- Site Header-->
 <header id="header" class="apo-header apo-header-transparent">
-    <div class="apo-header-section d-block d-md-flex">
+    <div class="apo-header-section d-flex justify-content-between">
         <div class="apo-header-component-first">
             <div class="apo-header-items">
                 {{--        <div class="apo-header-item">--}}
@@ -71,11 +71,15 @@
                                 </ul>
                                 <!-- End of SubMenu-->
                             </li>
-                            <li class="apo-has-children"><a href="/services">Services</a>
+                            <li class="apo-has-children">
+                                <a href="/services">Services</a>
                             </li>
-                            <li class="apo-has-children"><a href="/news">News</a>
+                            <li class="apo-has-children">
+                                <a href="/news">News</a>
                             </li>
-                            <li><a href="/contacts">Contact</a></li>
+                            <li class="apo-has-children">
+                                <a href="/contacts">Contact</a>
+                            </li>
                         </ul>
                     </nav>
                     <!-- End Navigation-->
@@ -148,6 +152,53 @@
     .dynamic-logo {
         width: 100px;
         /*transition: transform 0.5s ease-out;*/
+    }
+
+    @media (max-width: 991px) {
+        .apo-has-children > .apo-sub-menu > li {
+            display: inline;
+        }
+
+        .apo-has-children a {
+            text-align: start;
+        }
+
+        .apo-sub-menu a {
+            display: inline-block;
+        }
+
+        .apo-has-children > .apo-sub-menu, .apo-has-children .apo-has-children > .apo-sub-menu{
+            padding-top: 0;
+        }
+
+        .apo-mobile-nav-btn {
+            margin: 0 auto 5px 0;
+        }
+
+        .dynamic-logo {
+            margin-top: 8px;
+        }
+
+        .apo-social-networks {
+            margin-top: 3px;
+        }
+
+        .apo-header-section {
+            display: flex !important;
+            flex-direction: row;
+        }
+
+        .apo-header-component-first {
+            order: 2;
+        }
+
+        .apo-header-component-middle {
+            order: 1;
+        }
+
+        .apo-header-component-last {
+            order: 3;
+        }
     }
 
 

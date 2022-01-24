@@ -1,8 +1,8 @@
 @extends('frontend.home_layout')
 
 @section('content')
-    <link rel="stylesheet" href="https://amityapartment.com.bd/frontend/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://amityapartment.com.bd/frontend/assets/css/style.min.css">
+    <link rel="stylesheet" href="./frontend/css/amity/bootstrap.min.css">
+    <link rel="stylesheet" href="./frontend/css/amity/style.min.css">
 
     <!-- Page Content-->
     <div class="apo-page">
@@ -198,26 +198,29 @@
                     <div class="clearfix">
                         <button class="btn btn-primary" style="background-color: #Ef3e10; border-color: red" onclick="window.location.href='/review'">Add Review</button>
                     </div>
-                    <div id="testimonialSlider" class="owl-carousel owl-theme">
-                        <?php
-                        $reviews = DB::table('reviews')
-                            ->select('reviews.*')
-                            ->where('reviews.publication_status', '=', '1')
-                            ->get();
-                        ?>
-                        @foreach($reviews as $review)
-                            <div class="testimonials-item">
-                                <figure><img src="{{$review->user_image}}" alt="{{$review->user_name}}"
-                                             class="img-fluid">
-                                </figure>
-                                <div class="what-they-said">
-                                    {{$review->review_description}}
-                                </div>
-                                <h4 class="auther-title">{{$review->user_name}}</h4>
-                                <p class="auther-designation">{{$review->user_designation}}</p>
-                            </div> <!-- testimonials Item Loop End -->
-                        @endforeach
+                    <div style="position: relative">
+                        <div class="w-100 h-100" style="position: absolute; top:0; left: 0; background-color: rgba(243, 243, 243, 0.3); filter: blur(30px)"></div>
+                        <div id="testimonialSlider" class="owl-carousel owl-theme">
+                            <?php
+                            $reviews = DB::table('reviews')
+                                ->select('reviews.*')
+                                ->where('reviews.publication_status', '=', '1')
+                                ->get();
+                            ?>
+                            @foreach($reviews as $review)
+                                <div class="testimonials-item">
+                                    <figure><img src="{{$review->user_image}}" alt="{{$review->user_name}}"
+                                                 class="img-fluid">
+                                    </figure>
+                                    <div class="what-they-said">
+                                        {{$review->review_description}}
+                                    </div>
+                                    <h4 class="auther-title">{{$review->user_name}}</h4>
+                                    <p class="auther-designation">{{$review->user_designation}}</p>
+                                </div> <!-- testimonials Item Loop End -->
+                            @endforeach
 
+                        </div>
                     </div>
                 </div><!-- wrapper End -->
             </section><!-- testimonials End-->
@@ -324,6 +327,11 @@
         }
         .counter-flex .counter-box .counter-icon:after{
             background-color: white;
+        }
+
+        .clearfix .btn:hover{
+            background-color: #FFF!important;
+            color: red;
         }
 
     </style>

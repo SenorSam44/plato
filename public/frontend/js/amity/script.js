@@ -129,6 +129,9 @@ jQuery(function ($) {
                 }
             }
         });
+        if (document.querySelector('.owl-dots')){
+            document.querySelector('.owl-dots').classList.remove('disabled');
+        }
     } // carouselSlider
 
     function filtorProduct() {
@@ -237,5 +240,4 @@ jQuery(function ($) {
     animateWithWOW();
     contactFormSubmit();
     faqFormSubmit();
-    document.querySelector('#testimonialSlider .owl-dots').classList.remove('disabled')
 });

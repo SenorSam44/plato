@@ -260,4 +260,8 @@ class HomeController extends Controller
     {
         return view('frontend.single.static.diagnostic');
     }
+
+    public function anima(){
+        return view('frontend.manage.anima');
+    }
 }

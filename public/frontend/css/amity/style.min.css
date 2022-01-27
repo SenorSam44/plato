@@ -1,10 +1,10 @@
-@import url(animate.css);
-@import url(owl.carousel.css);
-@import url(owl.theme.default.css);
-@import url(boxicons.css);
-@import url(font-awesome.css);
-@import url(magnific-popup.css);
-@import url(swiper.css);
+@import url(/frontend/css/animate.css);
+@import url(/frontend/vendors/owl-carousel/assets/owl.carousel.css);
+@import url(/frontend/vendors/owl-carousel/assets/owl.theme.default.css);
+/*@import url(boxicons.css);*/
+/*@import url(font-awesome.css);*/
+/*@import url(magnific-popup.css);*/
+@import url(/frontend/vendors/swiper/swiper.css);
 
 html {
     font-size: 16px;
@@ -1042,7 +1042,7 @@ section {
     bottom: -15px;
     width: 20%;
     height: 5px;
-    background-color: #F5B316;
+    background-color: white;
     display: block;
 }
 
@@ -1138,7 +1138,7 @@ section {
 }
 
 .pagehead.bg-1:before {
-    background-image: url("../img/bg-pagehead.jpg");
+    background-image: url("/frontend/images/bg-pagehead.jpg");
 }
 
 .pagehead .pagehead-breadcrumb {
@@ -4962,15 +4962,15 @@ section {
 
 /* plato error fix */
 
-#testimonialSlider .owl-dot span{
+.owl-dot span{
     display: block;
 }
 
-#testimonialSlider .owl-dot{
+.owl-dot{
     margin: 7px;
 }
 
-#testimonialSlider .owl-dots{
+.owl-dots{
     display: flex;
     justify-content: center;
 }

@@ -55,7 +55,7 @@
                                 </ul>
                                 <!-- End of SubMenu-->
                             </li>
-                            <li class="apo-has-children"><a href="/projects2">Anima</a>
+                            <li class="apo-has-children"><a href="/anima">Anima</a>
                                 <!-- Sub Menu (level 2)-->
                                 <?php $categories = DB::table('categories')
                                     ->where('publication_status', 1)

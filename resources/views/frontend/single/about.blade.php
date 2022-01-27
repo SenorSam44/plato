@@ -1,8 +1,8 @@
 @extends('frontend.home_layout')
 
 @section('content')
-    <link rel="stylesheet" href="./frontend/css/amity/bootstrap.min.css">
-    <link rel="stylesheet" href="./frontend/css/amity/style.min.css">
+    <link rel="stylesheet" href="{{asset('frontend')}}/css/amity/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('frontend')}}/css/amity/style.min.css">
 
     <!-- Page Content-->
     <div class="apo-page">
@@ -13,7 +13,7 @@
                     <div class="col-lg-7"><img src="frontend/images/img-75.jpg" alt=""/></div>
                     <div class="col-lg-3 col-md-10">
                         <h2>About Us</h2>
-                        <p class="apo-section-sub-title" style="font-size: 18px">We are Apolo, an innovative studio that love creating design,
+                        <p class="apo-section-sub-title" style="font-size: 16px">We are Apolo, an innovative studio that love creating design,
                             art and photography products. </p>
                         <div class="apo-services">
                             @foreach($abouts as $about)
@@ -199,7 +199,7 @@
                         <button class="btn btn-primary" style="background-color: #Ef3e10; border-color: red" onclick="window.location.href='/review'">Add Review</button>
                     </div>
                     <div style="position: relative">
-                        <div class="w-100 h-100" style="position: absolute; top:0; left: 0; background-color: rgba(243, 243, 243, 0.3); filter: blur(30px)"></div>
+                        <div class="w-100 h-100" style="position: absolute; top:0; left: 0; background-color: black; border: 1px solid white"></div>
                         <div id="testimonialSlider" class="owl-carousel owl-theme">
                             <?php
                             $reviews = DB::table('reviews')
@@ -237,9 +237,9 @@
                     <h2 class="apo-widget-title">Say hi!</h2>
                     <ul class="apo-contact-info">
                         <li><a href="mailto:#">contact@yourwebsite.com</a></li>
-                        <li><a href="tel:#">+533 4929 295</a></li>
+                        <li><a href="tel:#">01767 668768</a></li>
                     </ul>
-                    <p>Copyright © 2017 Apolo. Designed by Ezwa Studio.</p>
+                    <p>Copyright © 2022 Plato. Developed by Aamiri E-Ccentric Services.</p>
                 </section>
                 <!-- End Widget-->
                 <!-- Widget-->
@@ -283,8 +283,8 @@
         </div>
     </footer>
     <!-- End Footer-->
-    <script src="https://amityapartment.com.bd/frontend/assets/js/core.min.js"></script>
-    <script src="https://amityapartment.com.bd/frontend/assets/js/script.js"></script>
+    <script src="{{asset('frontend')}}/js/amity/core.min.js"></script>
+    <script src="{{asset('frontend')}}/js/amity/script.js"></script>
 
     <style type="text/css">
         .lead {

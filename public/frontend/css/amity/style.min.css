@@ -3398,7 +3398,7 @@ section {
 
 .testimonials #testimonialSlider.owl-theme .owl-dots {
     margin-top: 0;
-    transform: translateY(50px);
+    transform: translateY(50hpx);
 }
 
 .testimonials #testimonialSlider.owl-theme .owl-dots .owl-dot span {
@@ -3408,7 +3408,7 @@ section {
 }
 
 .testimonials #testimonialSlider.owl-theme .owl-dots .owl-dot.active span, .testimonials #testimonialSlider.owl-theme .owl-dots .owl-dot:hover span, .testimonials #testimonialSlider.owl-theme .owl-dots .owl-dot:focus span {
-    background-color: #F5B316;
+    background-color: white;
 }
 
 .contact-info {
@@ -4958,3 +4958,19 @@ section {
 /*=======================================================================
 [11] Brand Area Style
 =========================================================================*/
+
+
+/* plato error fix */
+
+#testimonialSlider .owl-dot span{
+    display: block;
+}
+
+#testimonialSlider .owl-dot{
+    margin: 7px;
+}
+
+#testimonialSlider .owl-dots{
+    display: flex;
+    justify-content: center;
+}

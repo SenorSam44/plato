@@ -1,53 +1,53 @@
-<!-- =======================* Section Start *===================== -->
-<footer class="footer section-padding">
+<footer id="footer" data-bg-img-src="frontend/images/footer_bg.png" class="apo-footer">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-3 col-xl-3">
-                <div class="footer-logo mb-3">
-                    <img src="./assets/img/logo-light.svg" alt="Archtera" class="img-fluid">
-                </div>
-                <p class="text-light">Archtera offers the widest and best in class range in furniture, home
-                    furnishings & decor, modular kitchens, home improvement and more. </p>
-            </div>
-            <div class="col-sm-6 col-lg-3 col-xl-3">
-                <h3 class="footer-title text-uppercase mb-3">Quick Link</h3>
-                <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                    <li><a href="privacy-policy.html">Privacy &amp; Security</a></li>
-                    <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+        <div class="apo-widget-area apo-cols-4">
+            <!-- Widget-->
+            <section class="apo-widget apo-widget-size-1_7x apo-contact-info-widget">
+                <h2 class="apo-widget-title">Say hi!</h2>
+                <ul class="apo-contact-info">
+                    <li><a href="mailto:#">contact@yourwebsite.com</a></li>
+                    <li><a href="tel:#">01767 668768</a></li>
                 </ul>
-            </div>
-            <div class="col-sm-6 col-lg-3 col-xl-3">
-                <h3 class="footer-title text-uppercase mb-3">Follow Us</h3>
-                <ul class="footer-nav">
+                <p>Copyright © 2022 Plato. Developed by Aamiri E-Ccentric Services.</p>
+            </section>
+            <!-- End Widget-->
+            <!-- Widget-->
+            <section class="apo-widget apo-widget-size-0_65x">
+                <h2 class="apo-widget-title">Navigation</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </section>
+            <!-- End Widget-->
+            <!-- Widget-->
+            <section class="apo-widget apo-widget-size-0_65x">
+                <h2 class="apo-widget-title">Information</h2>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </section>
+            <!-- End Widget-->
+            <!-- Widget-->
+            <section class="apo-widget">
+                <h2 class="apo-widget-title">Subscribe Newsletter</h2>
+                <form class="apo-oneline-form apo-newsletter-form">
+                    <input type="email" name="email" placeholder="Email Address"/>
+                    <button type="submit"><i class="icon icon-arrow-right"></i></button>
+                </form>
+                <ul class="apo-hr-dotted-list">
                     <li><a href="#">Facebook</a></li>
                     <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Google+</a></li>
-                    <li><a href="#">Youtube</a></li>
                     <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Linkedin</a></li>
                 </ul>
-            </div>
-            <div class="col-sm-6 col-lg-3 col-xl-3">
-                <h3 class="footer-title text-uppercase mb-3">Subscribe</h3>
-                <p class="text-light mb-3">Join our Newsletter for latest updates from us </p>
-                <fieldset class="form-group">
-                    <input type="text" class="form-control no-border" placeholder="Enter your e-mail"
-                        name="newsletter" id="newsletter" required>
-                    <button type="submit" class="btn btn-primary btn-block mt-3 btn-with-icon-image">
-                        <span><img src="./assets/img/metro-mail.svg" alt="Subscribe"></span> Subscribe</button>
-                </fieldset>
-            </div>
+            </section>
+            <!-- End Widget-->
         </div>
     </div>
-</footer> <!-- footer End-->
-
-<section class="copyright">
-    <div class="container">
-        <p class="text-light mb-0">Copyright 2020. All Rights Reserved</p>
-    </div>
-</section>
-<!-- =======================* Section End *======================= -->
+</footer>

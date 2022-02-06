@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\V1\AdvisorController;
+use App\Http\Controllers\V1\VisualizationController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -52,7 +53,8 @@ Route::get('projects/{project}/modal', [HomeController::class, 'projectModal']);
 
 Route::get('project-category/{name}', [HomeController::class, 'categorizedProjects']);
 
-Route::get('anima', [HomeController::class, 'anima']);
+Route::get('visualizations', [HomeController::class, 'visualizations']);
+Route::get('visualization/{id}', [HomeController::class, 'visualization']);
 
 
 Route::get('members', [HomeController::class, 'members']);
@@ -162,6 +164,16 @@ Route::middleware('auth:web')->group(function () {
 		Route::post('delete-project', [ProjectController::class, 'destroy']);
 	    Route::post('/activate-project', [ProjectController::class, 'activateProject']);
 	    Route::post('/deactivate-project', [ProjectController::class, 'deactivateProject']);
+
+        //Visualizations
+        Route::get('visualization', [VisualizationController::class, 'create']);
+        Route::get('visualizations', [VisualizationController::class, 'index']);
+        Route::post('visualizations', [VisualizationController::class, 'store']);
+        Route::get('visualizations/{visualization}', [VisualizationController::class, 'show']);
+        Route::post('visualizations/{visualization}', [VisualizationController::class, 'update']);
+        Route::post('delete-visualization', [VisualizationController::class, 'destroy']);
+        Route::post('/activate-visualization', [VisualizationController::class, 'activateVisualization']);
+        Route::post('/deactivate-visualization', [VisualizationController::class, 'deactivateVisualization']);
 
 		//News
 		Route::get('new', [NewsController::class, 'create']);

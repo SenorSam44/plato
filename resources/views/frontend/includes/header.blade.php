@@ -55,21 +55,21 @@
                                 </ul>
                                 <!-- End of SubMenu-->
                             </li>
-                            <li class="apo-has-children"><a href="/anima">Anima</a>
-                                <!-- Sub Menu (level 2)-->
-                                <?php $categories = DB::table('categories')
-                                    ->where('publication_status', 1)
-                                    ->get();
-                                ?>
-                                <ul class="apo-sub-menu">
-                                    <li><a href="{{url('/projects')}}">All Projects</a></li>
-                                    @foreach($categories as $category)
-                                        <li>
-                                            <a href="{{url('/project-category/'.$category->category_name)}}">{{$category->category_name}}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                <!-- End of SubMenu-->
+                            <li class="apo-has-children"><a href="/visualizations">Visualization</a>
+{{--                                <!-- Sub Menu (level 2)-->--}}
+{{--                                <?php $categories = DB::table('categories')--}}
+{{--                                    ->where('publication_status', 1)--}}
+{{--                                    ->get();--}}
+{{--                                ?>--}}
+{{--                                <ul class="apo-sub-menu">--}}
+{{--                                    <li><a href="{{url('/projects')}}">All Projects</a></li>--}}
+{{--                                    @foreach($categories as $category)--}}
+{{--                                        <li>--}}
+{{--                                            <a href="{{url('/project-category/'.$category->category_name)}}">{{$category->category_name}}</a>--}}
+{{--                                        </li>--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                                <!-- End of SubMenu-->--}}
                             </li>
                             <li class="apo-has-children">
                                 <a href="/services">Services</a>

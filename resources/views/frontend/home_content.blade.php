@@ -176,22 +176,22 @@
             ele.autoplay = true;
             ele.muted = true;
             ele.loop = true;
-            ele.addEventListener('loadedmetadata', ()=>{
-                if (ele.videoWidth/window.innerWidth> ele.videoHeight/window.innerHeight){
-                    ele.style.height = '100vh';
-                }else{
-                    ele.style.width = '100vw';
-                }
-            });
+            // ele.addEventListener('loadedmetadata', ()=>{
+            //     if (ele.videoWidth/window.innerWidth> ele.videoHeight/window.innerHeight){
+            //         ele.style.height = '100vh';
+            //     }else{
+            //         ele.style.width = '100vw';
+            //     }
+            // });
             document.querySelector('#banner-video' + i).appendChild(ele);
             ele.play();
             i++;
 
-            document.querySelectorAll('.fp-section').forEach((ele) => {
-                ele.addEventListener('scroll', () => {
-                    console.log('fas');
-                })
-            });
+            // document.querySelectorAll('.fp-section').forEach((ele) => {
+            //     ele.addEventListener('scroll', () => {
+            //         console.log('fas');
+            //     })
+            // });
 
             {{--            @if(isset($banners[$index]))--}}
             {{--            preload.loadFile("{{$banners[$index]->banner_video}}");--}}
@@ -201,7 +201,11 @@
         function redirectOnClick() {
             document.querySelectorAll('.redirect-bg').forEach((ele) => {
                 ele.addEventListener('click', () => {
-                    window.location.href = ele.getAttribute('data-redirect-link');
+                    let redirect_link = ele.getAttribute('data-redirect-link')
+                    if(!redirect_link.includes("https://") || !redirect_link.includes("http://")){
+                        redirect_link = "https://"+redirect_link;
+                    }
+                    window.location.href = redirect_link
                 });
             })
         }
@@ -220,5 +224,21 @@
     .apo-full-page-container {
         margin-top: 0px;
     }
+
+    #apo-full-page .fp-section video{
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+    @media (max-width: 728px) {
+        #apo-full-page .fp-section{
+            height: 100vh;
+        }
+        .apo-photo-stream .fp-section .apo-section{
+            top: 25%;
+        }
+    }
+
 </style>
 

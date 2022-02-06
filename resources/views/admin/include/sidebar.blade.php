@@ -51,6 +51,18 @@
         </li>
 
         <li>
+            <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Visualizations <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{URL::to('admin/visualization')}}">Add Visualization</a>
+                </li>
+                <li>
+                    <a href="{{URL::to('admin/visualizations')}}">Manage Visualization</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
             <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Projects <span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Visualization;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -261,7 +262,22 @@ class HomeController extends Controller
         return view('frontend.single.static.diagnostic');
     }
 
-    public function anima(){
-        return view('frontend.manage.anima');
+    public function visualizations(){
+        $visualizations =Visualization::all();
+        return view('frontend.manages.visualizations', [
+            'visualizations'=> $visualizations
+        ]);
+    }
+
+    public function visualization($id){
+        $visualization =Visualization::find($id);
+
+        $gallery_files = unserialize($visualization["gallery_file"]);
+//        dd($gallery_files);
+
+        return view('frontend.single.visualization', [
+            'visualization'=> $visualization,
+            'gallery_files' => $gallery_files,
+        ]);
     }
 }

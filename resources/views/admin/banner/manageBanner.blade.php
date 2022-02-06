@@ -11,6 +11,7 @@
         <tr>
             <th>SI</th>
             <th>Banner Title</th>
+            <th>Banner Subtitle</th>
             <th>Banner Date</th>
             <th>Banner Redirect Link</th>
             <th>Image</th>

@@ -42,7 +42,6 @@ class VisualizationController extends Controller
         $visualizations['visualization_title'] = $request->visualization_title;
         $visualizations['visualization_subtitle'] = $request->visualization_subtitle;
         $visualizations['visualization_description'] = $request->visualization_description;
-        $visualizations['visualization_redirect_link'] = $request->visualization_redirect_link;
         $visualizations['publication_status'] = $request->publication_status;
 
         $dep_id = DB::table('visualizations')->select('id')->get();
@@ -137,7 +136,6 @@ class VisualizationController extends Controller
 //        }
         $visualizations['visualization_title'] = $request->visualization_title;
         $visualizations['visualization_subtitle'] = $request->visualization_subtitle;
-        $visualizations['visualization_redirect_link'] = $request->visualization_redirect_link;
         $visualizations['visualization_description'] = $request->visualization_description;
         $visualizations['publication_status'] = $request->publication_status;
 

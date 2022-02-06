@@ -12,7 +12,7 @@
             <th>SI</th>
             <th>Visualization Title</th>
             <th>Visualization Subtitle</th>
-            <th>Visualization Redirect Link</th>
+{{--            <th>Visualization Redirect Link</th>--}}
             <th>Image</th>
             <th>Publication Status</th>
             <th>Action</th>
@@ -28,7 +28,7 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $visualization->visualization_title }}</td>
                 <td>{{ $visualization->visualization_subtitle }}</td>
-                <td>{{ $visualization->visualization_redirect_link }}</td>
+{{--                <td>{{ $visualization->visualization_redirect_link }}</td>--}}
                 <td><img src="{{asset($visualization->visualization_image)}}" style="height: 70px; width: 100px;"></td>
                 <td><?php if($visualization->publication_status == 1){ ?> <a style="color: green">Active</a><?php } else{ ?> <a style="color: darkred">Deactive</a><?php } ?></td>
                 <td>

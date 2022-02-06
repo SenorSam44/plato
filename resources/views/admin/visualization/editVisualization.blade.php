@@ -32,15 +32,15 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="visualization_redirect_link">Visualization Redirect Link</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="visualization_redirect_link"
-                       name="visualization_redirect_link"
-                       placeholder="Enter Visualization Redirect Link"
-                       value="{{$visualization->visualization_redirect_link ?? ""}}" required>
-            </div>
-        </div>
+{{--        <div class="form-group">--}}
+{{--            <label class="control-label col-sm-2" for="visualization_redirect_link">Visualization Redirect Link</label>--}}
+{{--            <div class="col-sm-10">--}}
+{{--                <input type="text" class="form-control" id="visualization_redirect_link"--}}
+{{--                       name="visualization_redirect_link"--}}
+{{--                       placeholder="Enter Visualization Redirect Link"--}}
+{{--                       value="{{$visualization->visualization_redirect_link ?? ""}}" required>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="visualization_description">Visualization Description:</label>

@@ -26,62 +26,24 @@
             <section class='all-offerings-section' id=''>
                 <div class="back-video" style="top: 0; left: 0; width: 100%; height: 100%"></div>
                 <div class='container-fluid' style="position:relative;">
-                    <div class='row'>
-                        <div class='col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-6 col-lg-offset-6 col-lg-6'>
-                            <div class='content-wrapper'>
-                                <div id='all-offerings-pre-heading' class='pre-heading'>What we do</div>
-                                <ul class='all-offerings-section-list'>
+                    <div class='content-wrapper'>
+                        <div id='all-offerings-pre-heading' class='pre-heading'>What we do</div>
+                        <ul class='all-offerings-section-list'>
 
-                                    @foreach($visualizations as  $visualization)
-                                    <li>
-                                        <a href='{{url('visualization', $visualization->id)}}'
-                                           data-show='#exampleRenderings'>
-                                            <h1 class='hero-h1'>{{$visualization->visualization_title}}</h1>
-                                        </a>
-                                    </li>
-                                    @endforeach
-                                    <!-- <li><a id='showRenderings' href='#' data-show='#exampleRenderings'><h1 class='hero-h1'>Renderings</h1></a></li>
-                                    <li><a id='showAnimations' href='#' data-show='#exampleAnimations'><h1 class='hero-h1'>Animations</h1></a></li>
-                                    <li><a id='showInteractive' href='#' data-show='#exampleInteractive'><h1 class='hero-h1'>Interactive</h1></a></li>
-                                    <li><a id='showPhotography' href='#' data-show='#examplePhotography'><h1 class='hero-h1'>Photography</h1></a></li>
-                                    <li><a id='showVideo' href='#' data-show='#exampleVideo'><h1 class='hero-h1'>Video</h1></a></li>
-                                    <li><a id='showVirtualReality' href='#' data-show='#exampleVirtualReality'><h1 class='hero-h1'>Virtual Reality</h1></a></li> -->
-                                </ul>
-                                <p id='all-offerings-paragraph' class=''>We help communicate your ideas through a
-                                    mixture of visual disciplines</p>                                    <a
-                                    id='all-offerings-link' class='arrow-link' href='https://normli.ca/solutions/'>Learn
-                                    more about our Solutions</a></div>
-                        </div>
-                    </div>
+                            @foreach($visualizations as  $visualization)
+                                <li>
+                                    <a href='{{url('visualization', $visualization->id)}}'
+                                       data-show='#exampleRenderings'>
+                                        <h1 class='hero-h1'>{{$visualization->visualization_title}}</h1>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <p id='all-offerings-paragraph' class=''>We help communicate your ideas through a
+                            mixture of visual disciplines</p>                                    <a
+                            id='all-offerings-link' class='arrow-link' href='https://normli.ca/solutions/'>Learn
+                            more about our Solutions</a></div>
                 </div>
-{{--                <div class='media-background'>--}}
-
-{{--                    <img class='media-item' id='exampleRenderings'--}}
-{{--                         src='https://www.normli.ca/wp-content/uploads/1_NORM-LI_200911_V10_INT_Oculus_VF_01-1.jpg'/>--}}
-{{--                    <video muted autoplay playsinline loop class='media-item' id='exampleAnimations' poster=''>--}}
-{{--                        <source src='https://www.normli.ca/wp-content/uploads/animation.mp4'>--}}
-{{--                    </video>--}}
-{{--                    <video muted autoplay playsinline loop class='media-item' id='exampleInteractive' poster=''>--}}
-{{--                        <source src='https://www.normli.ca/wp-content/uploads/interactive.mp4'>--}}
-{{--                    </video>--}}
-{{--                    <img class='media-item' id='examplePhotography'--}}
-{{--                         src='https://www.normli.ca/wp-content/uploads/photography.jpg'/>--}}
-{{--                    <video muted autoplay playsinline loop class='media-item' id='exampleVideo' poster=''>--}}
-{{--                        <source src='https://www.normli.ca/wp-content/uploads/video.mp4'>--}}
-{{--                    </video>--}}
-{{--                    <!-- <img id='exampleRenderings' src='/images/renderings.jpg' />--}}
-{{--                    <img id='exampleAnimations' src='/images/renderings.jpg' />--}}
-{{--                    <img id='exampleInteractive' src='/images/renderings.jpg' />--}}
-{{--                    <img id='examplePhotography' src='/images/renderings.jpg' />--}}
-{{--                    <img id='exampleVideo' src='/images/renderings.jpg' />--}}
-{{--                    <img id='exampleVirtualReality' src='/images/renderings.jpg' /> -->--}}
-{{--                    <!-- <img id='exampleDefault' src='https://via.placeholder.com/1440x900' /> -->--}}
-{{--                    <!-- <video>--}}
-{{--                        <source></source>--}}
-{{--                    </video> -->--}}
-{{--                    <!-- <canvas></canvas> -->--}}
-{{--                    <!-- <iframe></iframe> -->--}}
-{{--                </div>--}}
             </section>
         </div>
     </main>
@@ -114,7 +76,6 @@
 
         .all-offerings-section .container-fluid{
             background: black;
-            height: 80vh;
         }
 
         .media-item{
@@ -130,8 +91,21 @@
         }
 
         .hero-h1{
-            width: fit-content;
+            width: 100%;
         }
+
+        ul.all-offerings-section-list .hero-h1{
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            padding-left: 50%;
+        }
+
+        .pre-heading, #all-offerings-paragraph, #all-offerings-link{
+            margin-left: 50%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 728px) {
             .media-background-heading.container-fluid{
                 padding: 0;
@@ -168,21 +142,21 @@
         }
 
         @media screen and (min-width: 767px){
-            section.all-offerings-section .container-fluid .row .col-xs-12 ul.all-offerings-section-list li a:before {
+            section.all-offerings-section ul.all-offerings-section-list li a:before {
                 margin-left: -50px;
                 margin-top: 12px;
                 font-size: 48px;
                 line-height: 1em;
             }
         }
-        section.all-offerings-section .container-fluid .row .col-xs-12 ul.all-offerings-section-list li a:hover:before{
+        section.all-offerings-section ul.all-offerings-section-list li a:hover:before{
             content: '➔'
         }
-        section.all-offerings-section .container-fluid .row .col-xs-12 ul.all-offerings-section-list li a:before {
+        section.all-offerings-section ul.all-offerings-section-list li a:before {
             content: '';
             position: absolute;
-            margin-left: -30px;
-            margin-top: 10px;
+            margin-left: calc( 44% - 50px);
+            margin-top: 30px;
             color: white;
             font-size: 40px;
             line-height: 1em;
@@ -197,7 +171,8 @@
             position: absolute;
             overflow: hidden;
             width: 100vw;
-            height: 80vh;
+            height: 100%;
+            margin-bottom: 2vh ;
             object-fit: cover;
             visibility: hidden;
         }

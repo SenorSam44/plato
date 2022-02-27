@@ -139,6 +139,29 @@ class VisualizationController extends Controller
         $visualizations['visualization_description'] = $request->visualization_description;
         $visualizations['publication_status'] = $request->publication_status;
 
+        if ($request->hasFile('gallery_file')) {
+            $gallery_file_array = [];
+            foreach ($request->file('gallery_file') as $gallery_file){
+//                $image = $request->file('visualization_video');
+//                $name = $max.'.'.$image->getClientOriginalExtension();
+//                $destinationPath = public_path('uploaded_videos/visualizations');
+//                $image->move($destinationPath, $name);
+//                //$this->save();
+//
+//                //$totalPathName = 'public/uploaded_videos/'.$name;
+//                //print_r($totalPathName) ;
+//                $totalPathName = 'uploaded_videos/visualizations/'.$name;
+//                $visualizations['visualization_video'] = $totalPathName;
+                $name = $id."-".Carbon::now()->toTimeString().".".$gallery_file->getClientOriginalExtension();
+                $destinationPath = public_path('uploaded_videos/visualizations');
+                $gallery_file->move($destinationPath, $name);
+
+                $totalPathName = 'uploaded_videos/visualizations/'.$name;
+                array_push($gallery_file_array, $totalPathName);
+            }
+            $visualizations['gallery_file'] = serialize($gallery_file_array);
+        }
+
         if ($request->hasFile('visualization_video')) {
             $video = $request->file('visualization_video');
             $name = $id.'.'.$video->getClientOriginalExtension();

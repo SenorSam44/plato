@@ -110,7 +110,7 @@
     }
 
     .apo-sub-menu {
-        background: rgba(1, 1, 1, 0.3);
+        background: rgba(1, 1, 1, 0.7);
     }
 
     .apo-sub-menu li {

@@ -32,15 +32,6 @@
             </div>
         </div>
 
-{{--        <div class="form-group">--}}
-{{--            <label class="control-label col-sm-2" for="visualization_redirect_link">Visualization Redirect Link</label>--}}
-{{--            <div class="col-sm-10">--}}
-{{--                <input type="text" class="form-control" id="visualization_redirect_link"--}}
-{{--                       name="visualization_redirect_link"--}}
-{{--                       placeholder="Enter Visualization Redirect Link"--}}
-{{--                       value="{{$visualization->visualization_redirect_link ?? ""}}" required>--}}
-{{--            </div>--}}
-{{--        </div>--}}
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="visualization_description">Visualization Description:</label>
@@ -75,7 +66,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="image">Visualization Image:</label>
                 <div class="col-sm-10">
-                    <img id="preview-image"
+                    <img class="preview-image"
                          src="{{isset($visualization->visualization_image) && strlen($visualization->visualization_image)>3? asset($visualization->visualization_image): null}}"
                          alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;">
                     <input type="file" class="form-control" id="image" name="visualization_image">
@@ -85,24 +76,41 @@
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="visualization_video">Gallery Image:</label>
-            {{--            @if(isset($visualization->gallery_file))--}}
-            {{--                <div class="col-sm-10">--}}
-            {{--                    <video width="320" height="240" controls>--}}
-            {{--                        <source src="{{URL::asset($visualization->gallery_file)}}" type="video/mp4">--}}
-            {{--                        Your browser does not support the video tag.--}}
-            {{--                    </video>--}}
+            @if(isset($visualization->gallery_file))
+                @foreach(unserialize($visualization->gallery_file) as $gallery_file)
+                    <div class="dynamic-gallery-image col-sm-10 row">
+                        @if(strpos($gallery_file, '.mkv') || strpos($gallery_file, '.mp4') || strpos($gallery_file, '.web'))
+                            <video class="col-sm-10" width="320" height="240" controls>
+                                <source src="{{URL::asset($gallery_file)}}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        @else
+                            <img class="col-sm-12 preview-image"
+                                 src="{{isset($gallery_file) && strlen($gallery_file)>3? asset($gallery_file): null}}"
+                                 alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;"/>
+                        @endif
 
-            {{--                    <input type="file" class="form-control" id="visualization_video" name="visualization_video">--}}
-            {{--                </div>--}}
-            {{--            @else--}}
-            {{--                <div class="col-sm-10">--}}
-            {{--                    <input type="file" class="form-control" id="visualization_video" name="visualization_video" required>--}}
-            {{--                </div>--}}
-            {{--            @endif--}}
-            <div class="col-sm-10 row">
+                        <div class="col-sm-10 text-right" style="padding: 0; margin: 4rem">
+                            <button type="button" class="remove-gallery-btn btn btn-danger color-white">
+                                Remove
+                            </button>
+                        </div>
+                        <input type="file" class="form-control col-sm-10" name="gallery_file[]" value="{{$gallery_file}}">
+                    </div>
+                @endforeach
+{{--            @else--}}
+{{--                <div class="dynamic-gallery-image col-sm-10">--}}
+{{--                    <input type="file" class="image-input form-control" id="visualization_video" name="gallery_file[]"--}}
+{{--                           required>--}}
+{{--                </div>--}}
+            @endif
+            <div class="dynamic-gallery-image col-sm-10 row" style="margin-top: 1em; padding: 0">
+                <img class="col-sm-12 preview-image"
+                     src=""
+                     alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;"/>
+
                 <div class="col-sm-12">
                     <div class="col-sm-10" style="margin-bottom: 5px; padding: 0">
-                        <input type="file" class="form-control" name="gallery_file[]">
                     </div>
                     <div class="col-sm-2 text-right">
                         <button type="button" class="add-gallery-btn btn btn-info color-white">
@@ -110,12 +118,6 @@
                         </button>
                     </div>
                 </div>
-
-                {{--                <div class="col-sm-4 text-right">--}}
-                {{--                    <button class="btn btn-danger color-white">--}}
-                {{--                        <i class="fa fa-times"></i>--}}
-                {{--                    </button>--}}
-                {{--                </div>--}}
 
             </div>
         </div>
@@ -147,64 +149,75 @@
         </div>
     </form>
 
+    <style>
+        @media (min-width: 729px) {
+            .dynamic-gallery-image{
+                margin-left: 12.5vw;
+            }
+        }
+    </style>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
+        get_preview()
+        remove_btn_listener();
+        preview_none();
 
-        // document.querySelectorAll('.add-gallery-btn').forEach((addbtn) => {
-        //     addbtn.parentElement.parentElement.append("<div class=\"offset-2 col-sm-8\">\n" +
-        //         "                    <input type=\"file\" class=\"form-control\" name=\"gallery_file[]\">\n" +
-        //         "                </div>" +
-        //         "                <div class=\"col-sm-4 text-right\">\n" +
-        //         "                    <button class=\"btn btn-danger color-white\">\n" +
-        //         "                        <i class=\"fa fa-times\"></i>\n" +
-        //         "                    </button>\n" +
-        //         "                </div>" +
-        //         "")
-        // })
+        function remove_btn_listener(){
+            document.querySelectorAll('.remove-gallery-btn').forEach((removeBtn)=> {
+
+                removeBtn.addEventListener('click', ()=>{
+                    removeBtn.parentElement.parentElement.remove();
+                }, false)
+            })
+        }
+
+        function preview_none(){
+            document.querySelectorAll('.preview-image').forEach(preview => {
+                if (!preview.getAttribute('src')){
+                    preview.style.display = 'none'
+                }
+            })
+        }
+
+        function get_preview(){
+            $(document).on('change', '.image-input', (ele) => {
+
+                var j = $(ele.target).parent().parent().find('.preview-image')
+                j.attr('src', URL.createObjectURL(ele.target.files[0]));
+                j.css('display', 'block')
+                console.log(j)
+            })
+        }
 
         $(document).ready(function (e) {
-            if (!$('#preview-image').attr('src')) {
-                $('#preview-image').css("display", "none");
-            }
-
-            $('#image').change(function () {
-                $('#preview-image').css("display", "block");
-
-                let reader = new FileReader();
-
-                reader.onload = (e) => {
-
-                    $('#preview-image').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(this.files[0]);
-
-            });
+            // get_preview();
 
             //    add gallery image
             let i = 0;
             $('.add-gallery-btn').click((ele) => {
                 i++;
 
-                $(ele.target).parent().parent().append('<div class="gallery-field col-sm-12 row" style="margin: 5px 0; padding: 0">' +
+                $(ele.target).parent().parent().append('<div class="dynamic-gallery-image gallery-field col-sm-12 row" style="margin: 5px 0; padding: 0">' +
+                    '               <div class="col-sm-12">' +
+                        '   `           <img class="preview-image"\n' +
+                        '                     src=""\n' +
+                        '                     alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;"/>' +
+                    '               </div>' +
                     '               <div class="col-sm-10" style="padding: 0">\n' +
-                    '                    <input type="file" class="form-control" name="gallery_file[]">\n' +
+                    '                    <input type="file" class="image-input form-control" name="gallery_file[]">\n' +
+                        '                <div class="col-sm-2 text-right" style="padding: 0">\n' +
+                        '                    <button type="button" class="remove-gallery-btn btn btn-danger color-white">\n' +
+                        '                        Remove\n' +
+                        '                    </button>\n' +
+                        '                </div>' +
                     '                </div>\n' +
-                    '                <div class="col-sm-2 text-right" style="padding: 0">\n' +
-                    '                    <button type="button" class="remove-gallery-btn btn btn-danger color-white">\n' +
-                    '                        Remove\n' +
-                    '                    </button>\n' +
-                    '                </div>' +
-                '               </div>')
+                    '               </div>')
+
+                preview_none()
+                remove_btn_listener()
+
             });
-
-            $(document).on('click', '.remove-gallery-btn', (ele) => {
-                i--;
-                // $.parent().parent().parent().children().last().remove()
-                $(ele.target).parent().parent().remove()
-
-            })
 
         });
 

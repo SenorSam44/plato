@@ -113,14 +113,6 @@
     <div class="apo-header-section">
         <div class="apo-header-component-first dynamic-logo-wrapper">
             <div class="apo-header-items">
-                {{--                <div class="apo-header-item">--}}
-                {{--                    <!-- Navigation Button-->--}}
-                {{--                    <div type="button" data-arctic-modal="#modal-nav"--}}
-                {{--                         class="apo-header-button hamburger hamburger--emphatic apo-hamburger-clickable"><span--}}
-                {{--                            class="hamburger-box"><span class="hamburger-inner"></span></span>--}}
-                {{--                    </div>--}}
-                {{--                    <!-- End Navigation Button-->--}}
-                {{--                </div>--}}
                 <div class="apo-header-item">
                     <!-- Logo-->
                     <a href="/" title="Home" class="apo-logo"><img
@@ -141,9 +133,9 @@
                         <div class="swiper-wrapper">
                             @foreach($gallery_files as $gallery_file)
                                 <div class="swiper-slide">
-                                    <div
-                                        data-bg-img-src="{{$gallery_file}}"
-                                        class="apo-slider-thumb"></div>
+                                    <div data-bg-img-src="{{asset($gallery_file)}}"
+                                         class="apo-slider-thumb">
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
@@ -160,7 +152,7 @@
                 {{--                    <button type="button" class="apo-hover-btn"><span class="apo-hover-btn-tooltip">220</span><i--}}
                 {{--                            class="icon icon-heart"></i></button>--}}
                 <!-- End Like-->
-                </div>m
+                </div>
                 <div class="apo-header-item">
                     <!-- FullScreen-->
                     <button type="button" class="apo-hover-btn apo-fullscreen-control"><i class="icon icon-expand"></i>
@@ -178,7 +170,7 @@
                             class="apo-hover-btn">
                         <i class="icon icon-menu-circle"></i>
                     </button>
-                <!-- End Info-->
+                    <!-- End Info-->
 
                 </div>
             </div>
@@ -193,7 +185,7 @@
             <ul>
                 @foreach($gallery_files as $galley_file)
                     <li data-transition="fade" data-speed="500">
-                        <img src="{{$galley_file}}" alt=""/>
+                        <img src="{{asset($galley_file)}}" alt=""/>
                     </li>
                 @endforeach
             </ul>

@@ -156,7 +156,7 @@
                 </div>
             </div>
         </div>
-        <div class="apo-header-component-last" style="display: flex; justify-content: end; margin: auto 0;">
+        <div class="apo-header-component-last d-md-flex" style="justify-content: end; margin: auto 0;">
             <div class="apo-header-items">
                 <div class="apo-header-item">
                     <!-- Like-->

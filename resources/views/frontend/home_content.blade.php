@@ -9,22 +9,6 @@
 
     <!-- Page Content-->
     <div class="apo-page">
-        <ul class="apo-photo-stream-actions">
-            <li>
-                <!-- Like-->
-                <button type="button" class="apo-hover-btn"><span class="apo-hover-btn-tooltip">220</span><i
-                        class="icon icon-heart"></i></button>
-                <!-- End Like-->
-            </li>
-            <li>
-                <!-- Info-->
-                <button type="button" data-arctic-modal="modals/modal_photo_info.html" data-arctic-modal-type="ajax"
-                        data-photo-title="The Deer" data-photo-meta="A Photo by Christian Carter"
-                        data-photo-info="[{&quot;name&quot;: &quot;Made In&quot;, &quot;value&quot;: &quot;August 2015&quot;}, {&quot;name&quot;: &quot;Model&quot;, &quot;value&quot;: &quot;Canon EOS 6D&quot;}, {&quot;name&quot;: &quot;ISO&quot;, &quot;value&quot;: &quot;400&quot;}, {&quot;name&quot;: &quot;Focal Length&quot;, &quot;value&quot;: &quot;14mm&quot;}, {&quot;name&quot;: &quot;Category&quot;, &quot;value&quot;: &quot;Nature, Landscape&quot;}, {&quot;name&quot;: &quot;Aperture&quot;, &quot;value&quot;: &quot;f/4&quot;}, {&quot;name&quot;: &quot;Exposure Time&quot;, &quot;value&quot;: &quot;1/40&quot;}]"
-                        class="apo-hover-btn apo-photo-info-invoker"><i class="icon icon-menu-circle"></i></button>
-                <!-- End Info-->
-            </li>
-        </ul>
         <div id="apo-full-page" class="apo-full-page-container apo-photo-stream">
             @foreach($banners as $index => $banner)
                 {{--                <div data-bg-img-src="{{$banner->banner_image}}" class="fp-section">--}}
@@ -222,7 +206,11 @@
 
 <style type="text/css">
     .apo-full-page-container {
-        margin-top: 0px;
+        margin-top: 0;
+    }
+
+    .apo-page-dark-skin .apo-photo-stream .fp-section::after {
+        opacity: 0!important;
     }
 
     #apo-full-page .fp-section video{

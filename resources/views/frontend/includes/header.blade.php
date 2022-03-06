@@ -3,7 +3,7 @@
     <div class="apo-preloader-outer">
         <div class="apo-preloader-inner">
             <div class="apo-loader">
-                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="" style="padding-top: 30px;">
+                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="">
             </div>
         </div>
     </div>
@@ -158,9 +158,13 @@
         .apo-has-children > .apo-sub-menu > li {
             display: inline;
         }
+        .apo-sub-menu{
+            text-align: start;
+        }
 
         .apo-has-children a {
             text-align: start;
+            text-transform: capitalize;
         }
 
         .apo-sub-menu a {

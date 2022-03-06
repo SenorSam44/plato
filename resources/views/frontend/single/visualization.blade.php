@@ -133,9 +133,15 @@
                         <div class="swiper-wrapper">
                             @foreach($gallery_files as $gallery_file)
                                 <div class="swiper-slide">
-                                    <div data-bg-img-src="{{asset($gallery_file)}}"
-                                         class="apo-slider-thumb">
-                                    </div>
+                                    @if(strpos($gallery_file, '.mkv') || strpos($gallery_file, '.mp4') || strpos($gallery_file, '.web'))
+                                        <video data-bg-img-src="{{asset($gallery_file)}}"
+                                               class="apo-slider-thumb">
+                                        </video>
+                                    @else
+                                        <div data-bg-img-src="{{asset($gallery_file)}}"
+                                             class="apo-slider-thumb">
+                                        </div>
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
@@ -185,7 +191,12 @@
             <ul>
                 @foreach($gallery_files as $galley_file)
                     <li data-transition="fade" data-speed="500">
-                        <img src="{{asset($galley_file)}}" alt=""/>
+                        {{str_contains($gallery_file, '.mp4')}}
+                        @if(in_array(substr($gallery_file, -4), ['.mp4', '.webm', '.mkv'] ))
+                            <video src="{{asset($galley_file)}}" autoplay loop muted></video>
+                        @else
+                            <img src="{{asset($galley_file)}}" alt=""/>
+                        @endif
                     </li>
                 @endforeach
             </ul>

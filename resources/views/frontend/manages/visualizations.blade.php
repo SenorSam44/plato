@@ -215,12 +215,7 @@
             })
         }
 
-        // function playVideo() {
-        //     window.setInterval(()=>{
-        //         document.querySelector('.fp-section.active video').play();
-        //     }, 1000);
-        //
-        // }
+
         function shwoBackgroundVideo(){
             document.querySelectorAll('.all-offerings-section-list h1').forEach((list_item, index)=> {
                 list_item.addEventListener('mouseover', ()=> {

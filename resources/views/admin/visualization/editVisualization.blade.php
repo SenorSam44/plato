@@ -80,12 +80,13 @@
                 @foreach(unserialize($visualization->gallery_file) as $gallery_file)
                     <div class="dynamic-gallery-image col-sm-10 row">
                         @if(strpos($gallery_file, '.mkv') || strpos($gallery_file, '.mp4') || strpos($gallery_file, '.web'))
-                            <video class="col-sm-10" width="320" height="240" controls>
+                            <video data-name="{{$gallery_file}}" class="col-sm-10" width="320" height="240" controls>
                                 <source src="{{URL::asset($gallery_file)}}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         @else
-                            <img class="col-sm-12 preview-image"
+                            <img data-name="{{$gallery_file}}"
+                                 class="col-sm-12 preview-image"
                                  src="{{isset($gallery_file) && strlen($gallery_file)>3? asset($gallery_file): null}}"
                                  alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;"/>
                         @endif
@@ -95,14 +96,10 @@
                                 Remove
                             </button>
                         </div>
-                        <input type="file" class="form-control col-sm-10" name="gallery_file[]" value="{{$gallery_file}}">
+                        <input type="file" class="form-control col-sm-10" name="gallery_file[]"
+                               value="{{$gallery_file}}">
                     </div>
                 @endforeach
-{{--            @else--}}
-{{--                <div class="dynamic-gallery-image col-sm-10">--}}
-{{--                    <input type="file" class="image-input form-control" id="visualization_video" name="gallery_file[]"--}}
-{{--                           required>--}}
-{{--                </div>--}}
             @endif
             <div class="dynamic-gallery-image col-sm-10 row" style="margin-top: 1em; padding: 0">
                 <img class="col-sm-12 preview-image"
@@ -151,7 +148,7 @@
 
     <style>
         @media (min-width: 729px) {
-            .dynamic-gallery-image{
+            .dynamic-gallery-image {
                 margin-left: 12.5vw;
             }
         }
@@ -163,24 +160,34 @@
         remove_btn_listener();
         preview_none();
 
-        function remove_btn_listener(){
-            document.querySelectorAll('.remove-gallery-btn').forEach((removeBtn)=> {
+        function remove_btn_listener() {
 
-                removeBtn.addEventListener('click', ()=>{
+            document.querySelectorAll('.remove-gallery-btn').forEach((removeBtn) => {
+                let parent_ele = removeBtn.parentElement.parentElement;
+                let dataName = ''
+                if (parent_ele.querySelector('img'))
+                    dataName = parent_ele.querySelector('img').getAttribute('data-name')
+                else
+                    dataName = parent_ele.querySelector('video').getAttribute('data-name')
+
+                removeBtn.addEventListener('click', () => {
                     removeBtn.parentElement.parentElement.remove();
+                    $('form').append('<input type="hidden" ' +
+                        'id="removed_file" name="removed_file[]" ' +
+                        'value="'+dataName+'">');
                 }, false)
             })
         }
 
-        function preview_none(){
+        function preview_none() {
             document.querySelectorAll('.preview-image').forEach(preview => {
-                if (!preview.getAttribute('src')){
+                if (!preview.getAttribute('src')) {
                     preview.style.display = 'none'
                 }
             })
         }
 
-        function get_preview(){
+        function get_preview() {
             $(document).on('change', '.image-input', (ele) => {
 
                 var j = $(ele.target).parent().parent().find('.preview-image')
@@ -200,17 +207,17 @@
 
                 $(ele.target).parent().parent().append('<div class="dynamic-gallery-image gallery-field col-sm-12 row" style="margin: 5px 0; padding: 0">' +
                     '               <div class="col-sm-12">' +
-                        '   `           <img class="preview-image"\n' +
-                        '                     src=""\n' +
-                        '                     alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;"/>' +
+                    '   `           <img class="preview-image"\n' +
+                    '                     src=""\n' +
+                    '                     alt="office logo preview" style="max-width: 100px; height: 100px; margin: 10px 0;"/>' +
                     '               </div>' +
                     '               <div class="col-sm-10" style="padding: 0">\n' +
                     '                    <input type="file" class="image-input form-control" name="gallery_file[]">\n' +
-                        '                <div class="col-sm-2 text-right" style="padding: 0">\n' +
-                        '                    <button type="button" class="remove-gallery-btn btn btn-danger color-white">\n' +
-                        '                        Remove\n' +
-                        '                    </button>\n' +
-                        '                </div>' +
+                    '                <div class="col-sm-2 text-right" style="padding: 0">\n' +
+                    '                    <button type="button" class="remove-gallery-btn btn btn-danger color-white">\n' +
+                    '                        Remove\n' +
+                    '                    </button>\n' +
+                    '                </div>' +
                     '                </div>\n' +
                     '               </div>')
 

@@ -93,6 +93,10 @@
                 margin: 0!important;
             }
 
+            .apo-header-component-last .apo-header-items{
+                text-align: end;
+            }
+
         }
     </style>
 </head>
@@ -102,7 +106,7 @@
     <div class="apo-preloader-outer">
         <div class="apo-preloader-inner">
             <div class="apo-loader">
-                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="" style="backpadding-top: 30px;">
+                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="">
             </div>
         </div>
     </div>
@@ -113,14 +117,6 @@
     <div class="apo-header-section">
         <div class="apo-header-component-first dynamic-logo-wrapper">
             <div class="apo-header-items">
-                {{--                <div class="apo-header-item">--}}
-                {{--                    <!-- Navigation Button-->--}}
-                {{--                    <div type="button" data-arctic-modal="#modal-nav"--}}
-                {{--                         class="apo-header-button hamburger hamburger--emphatic apo-hamburger-clickable"><span--}}
-                {{--                            class="hamburger-box"><span class="hamburger-inner"></span></span>--}}
-                {{--                    </div>--}}
-                {{--                    <!-- End Navigation Button-->--}}
-                {{--                </div>--}}
                 <div class="apo-header-item">
                     <!-- Logo-->
                     <a href="/" title="Home" class="apo-logo"><img
@@ -158,12 +154,6 @@
         </div>
         <div class="apo-header-component-last d-md-flex" style="justify-content: end; margin: auto 0;">
             <div class="apo-header-items">
-                <div class="apo-header-item">
-                    <!-- Like-->
-                {{--                    <button type="button" class="apo-hover-btn"><span class="apo-hover-btn-tooltip">220</span><i--}}
-                {{--                            class="icon icon-heart"></i></button>--}}
-                <!-- End Like-->
-                </div>
                 <div class="apo-header-item">
                     <!-- FullScreen-->
                     <button type="button" class="apo-hover-btn apo-fullscreen-control"><i class="icon icon-expand"></i>
@@ -301,6 +291,20 @@
     });
     logo_wrapper.addEventListener('mouseout', () => {
         logo.src = '{{ asset('frontend') }}/images/logo.png';
+    });
+
+    window.addEventListener("load", function(){
+        setTimeout(()=> {
+            if(window.screen.width<729){
+                document.querySelectorAll('.tp-bgimg.defaultimg ').forEach((ele) => {
+                    // console.log();
+                    ele.style.backgroundSize = "contain";
+                    ele.parentElement.parentElement.style.background = "black";
+                })
+
+            }
+        }, 1000)
+
     });
 
 </script>

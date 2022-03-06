@@ -28,7 +28,7 @@
 					mobileBreakpoint: 10000
 				})
 			}
-			
+
 		/* ------------------------------------------------
 				End of Main Navigation
 		------------------------------------------------ */
@@ -131,7 +131,7 @@
 				swiperResizeTimeoutId,
 				swiperOptions,
 				revControls = $('.apo-revslider-controls');
- 	
+
  			if( $.fn.revolution ) {
 				mainRev = jQuery('#rev-slider-1').show().revolution({
 					delay: 9000,
@@ -204,13 +204,13 @@
 			    		if(secondaryRev) secondaryRev.revpause();
 			    		if(mainRev) mainRev.revpause();
 			    		$(this).closest('.apo-revslider-controls-item').removeClass('apo-playing');
-			    		e.preventDefault();	
+			    		e.preventDefault();
 			    	})
 			    	.on('click.ApoloRevSlider', '.apo-revslider-control-play', function(e){
 			    		if(secondaryRev) secondaryRev.revresume();
 			    		if(mainRev) mainRev.revresume();
 			    		$(this).closest('.apo-revslider-controls-item').addClass('apo-playing');
-			    		e.preventDefault();	
+			    		e.preventDefault();
 			    	})
 			    }
 		   	}
@@ -230,7 +230,7 @@
 			    });
 
 			    if( thumbs.hasClass('apo-slider-thumbs-vr') ) {
-			    	
+
 			    	swiperInstance = new Swiper( thumbs.get(0), $.extend(true, {}, swiperOptions, {
 			    		slidesPerView: $w.width() < 768 ? 3 : 5,
 			    		direction: $w.width() < 768 ? 'horizontal' : 'vertical',
@@ -243,7 +243,7 @@
 				        	}
 				        }
 			    	}));
-			    	
+
 
 				    $w.on('resize.ApoloSwiperUpdates', function(e){
 
@@ -345,31 +345,32 @@
 			var stripedPhotosCarousel = $('.apo-striped-photos.owl-carousel');
 
 			if(stripedPhotosCarousel.length) {
+			    let carouselItemNumber = document.querySelectorAll('.apo-striped-photos.owl-carousel .apo-striped-photo.pic-box').length
 
 				$.Apolo.modules.OWLCarousel.init( $('.apo-striped-photos.owl-carousel'), {
-					loop: true,
+					loop: carouselItemNumber > 5,
 					nav: true,
 					mouseDrag: false, // !important
 					touchDrag: false,
 					itemsGrow: true,
-					navText: ['<span class="owl-nav-text">Prev</span> <i class="icon-arrow-left"></i>', '<span class="owl-nav-text">Next</span> <i class="icon-arrow-right"></i>'], 
+					navText: ['<span class="owl-nav-text">Prev</span> <i class="icon-arrow-left"></i>', '<span class="owl-nav-text">Next</span> <i class="icon-arrow-right"></i>'],
 					responsive: {
 						0: {
 							items: 1,
 							itemsGrow: false // important custom option
 						},
 						600: {
-							items: 2
+                            items: Math.min(2, carouselItemNumber)
 						},
 						768: {
-							items: 2
+                            items: Math.min(2, carouselItemNumber)
 						},
 						991: {
-							items: 3,
+                            items: Math.min(3, carouselItemNumber),
 							itemsGrow: true // important custom option
 						},
 						1280: {
-							items: 5
+							items: Math.min(5, carouselItemNumber)
 						}
 					},
 					onInitialized: function() {

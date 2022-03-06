@@ -338,7 +338,10 @@ body {
 }
 
 .apo-loader img {
-  vertical-align: middle;
+    position: absolute;
+    top: calc(50vh - 15px);
+    left: calc(50vw - 50px);
+    width: 100px;
 }
 
 @-webkit-keyframes apoBorderPulse {
@@ -1497,9 +1500,16 @@ blockquote:not(:last-child) {
 }
 
 .apo-header:not(.apo-header-vertical) .apo-header-section {
-  padding: 15px 100px;
+  padding: 15px 50px 15px 100px;
 }
+@media (max-width: 729px) {
+    .apo-header:not(.apo-header-vertical) .apo-header-section {
+        padding: 15px 0 0 0;
+    }
+    .apo-header-component-first, .apo-header-component-middle, .apo-header-component-last{
 
+    }
+}
 .apo-header:not(.apo-header-vertical).apo-style-3 .apo-header-section {
   padding-top: 30px;
   padding-bottom: 30px;

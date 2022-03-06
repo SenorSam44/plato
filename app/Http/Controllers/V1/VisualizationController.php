@@ -142,16 +142,6 @@ class VisualizationController extends Controller
         if ($request->hasFile('gallery_file')) {
             $gallery_file_array = [];
             foreach ($request->file('gallery_file') as $gallery_file){
-//                $image = $request->file('visualization_video');
-//                $name = $max.'.'.$image->getClientOriginalExtension();
-//                $destinationPath = public_path('uploaded_videos/visualizations');
-//                $image->move($destinationPath, $name);
-//                //$this->save();
-//
-//                //$totalPathName = 'public/uploaded_videos/'.$name;
-//                //print_r($totalPathName) ;
-//                $totalPathName = 'uploaded_videos/visualizations/'.$name;
-//                $visualizations['visualization_video'] = $totalPathName;
                 $name = $id."-".Carbon::now()->toTimeString().".".$gallery_file->getClientOriginalExtension();
                 $destinationPath = public_path('uploaded_videos/visualizations');
                 $gallery_file->move($destinationPath, $name);
@@ -159,7 +149,34 @@ class VisualizationController extends Controller
                 $totalPathName = 'uploaded_videos/visualizations/'.$name;
                 array_push($gallery_file_array, $totalPathName);
             }
-            $visualizations['gallery_file'] = serialize($gallery_file_array);
+            $prev_gallery = unserialize(Visualization::where('id',$id)->first()->gallery_file);
+            $visualizations['gallery_file'] = serialize(array_merge($prev_gallery, $gallery_file_array));
+            DB::table('visualizations')->where('id','=',$id)->update($visualizations);
+        }
+
+        if (isset($request->removed_file)) {
+//            dd($request);
+//            $gallery_file_array = [];
+//            foreach (unserialize($visualizations['gallery_file']) as $old_gallery_file){
+//
+//                if
+//                $gallery_file->move($destinationPath, $name);
+//
+//                $totalPathName = 'uploaded_videos/visualizations/'.$name;
+//                array_push($gallery_file_array, $totalPathName);
+//            }
+//            $prev_gallery = unserialize(Visualization::find($id)->first()->gallery_file);
+            $all_gallery_file=unserialize(DB::table('visualizations')->where('id','=',$id)->first()->gallery_file);
+            $visualizations['gallery_file'] = serialize(array_diff($all_gallery_file, $request->removed_file));
+//            dd($visualizations['gallery_file']);
+            foreach ($request->removed_file as $removed_file){
+                try{
+                    unlink($removed_file);
+                }catch (\Exception $e){
+
+                }
+            }
+//            $visualizations->save();
         }
 
         if ($request->hasFile('visualization_video')) {
@@ -255,5 +272,26 @@ class VisualizationController extends Controller
         $success = DB::table('visualizations')->where('id','=',$id)->update($visualizations);
         return redirect()->back()->with('msg','Visualization deactivated successfully!');
     }
+
+//    public function removeGalleryFile(Request $request){
+//        dd($request);
+//        $visual = Visualization::find($request->id);
+//        $gallery_files = $visual->gallery_file;
+//        $removed_file = $request->galleryfile;
+//        $all_gallery_files = unserialize($gallery_files);
+//
+//        $new_gallery_files = [];
+//        foreach ($all_gallery_files as $all_gallery_file){
+//            if($all_gallery_file!=$removed_file){
+//                array_push($new_gallery_files, $all_gallery_file);
+//            }
+//        }
+//        $visual->gallery_file = $new_gallery_files;
+//        $visual->save();
+//
+//        return response()->json([
+//            "visualization"=> $visual,
+//        ]);
+//    }
 
 }

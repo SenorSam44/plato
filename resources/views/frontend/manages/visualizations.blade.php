@@ -155,8 +155,8 @@
         section.all-offerings-section ul.all-offerings-section-list li a:before {
             content: '';
             position: absolute;
-            margin-left: calc( 44% - 50px);
-            margin-top: 30px;
+            margin-left: calc( 50% - 150px);
+            margin-top: 20px;
             color: white;
             font-size: 40px;
             line-height: 1em;

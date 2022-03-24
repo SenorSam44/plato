@@ -4816,12 +4816,13 @@ table {
 }
 
 .apo-striped-photo {
-  font-weight: 400;
-  color: #fff;
-  overflow: hidden;
-  padding: 60px 30px;
-  position: relative;
-  z-index: 1;
+    font-weight: 400;
+    color: #fff;
+    overflow: hidden;
+    padding: 60px 30px;
+    position: relative;
+    z-index: 1;
+    background-position: center;
 }
 
 .apo-striped-photo::before {
@@ -4985,7 +4986,8 @@ table {
 }
 
 .apo-slider-thumbs-hr .apo-slider-thumb {
-  width: 70px;
+  width: 100px;
+
 }
 
 .apo-slider-thumbs-hr .swiper-button-prev,

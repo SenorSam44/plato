@@ -102,7 +102,7 @@
     <div class="apo-preloader-outer">
         <div class="apo-preloader-inner">
             <div class="apo-loader">
-                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="" style="padding-top: 30px;">
+                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="">
             </div>
         </div>
     </div>
@@ -190,8 +190,7 @@
         <div id="rev-slider-1" class="rev_slider fullscreenbanner apo-revslider-theme">
             <ul>
                 @foreach($gallery_files as $galley_file)
-                    <li data-transition="fade" data-speed="500">
-                        {{str_contains($gallery_file, '.mp4')}}
+                    <li style="background-image: url('{{asset($galley_file)}}'); width: 100vw;" data-transition="fade" data-speed="500">
                         @if(in_array(substr($gallery_file, -4), ['.mp4', '.webm', '.mkv'] ))
                             <video src="{{asset($galley_file)}}" autoplay loop muted></video>
                         @else

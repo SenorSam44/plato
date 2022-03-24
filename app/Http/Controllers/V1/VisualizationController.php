@@ -51,18 +51,8 @@ class VisualizationController extends Controller
 
         if ($request->hasFile('gallery_file')) {
             $gallery_file_array = [];
-            foreach ($request->file('gallery_file') as $gallery_file){
-//                $image = $request->file('visualization_video');
-//                $name = $max.'.'.$image->getClientOriginalExtension();
-//                $destinationPath = public_path('uploaded_videos/visualizations');
-//                $image->move($destinationPath, $name);
-//                //$this->save();
-//
-//                //$totalPathName = 'public/uploaded_videos/'.$name;
-//                //print_r($totalPathName) ;
-//                $totalPathName = 'uploaded_videos/visualizations/'.$name;
-//                $visualizations['visualization_video'] = $totalPathName;
-                $name = $max."-".Carbon::now()->toTimeString().".".$gallery_file->getClientOriginalExtension();
+            foreach ($request->file('gallery_file') as $key => $gallery_file){
+                $name = $max."-".$key."-".Carbon::now()->timestamp.".".$gallery_file->getClientOriginalExtension();
                 $destinationPath = public_path('uploaded_videos/visualizations');
                 $gallery_file->move($destinationPath, $name);
 
@@ -73,7 +63,6 @@ class VisualizationController extends Controller
         }
 
         if ($request->hasFile('visualization_video')) {
-
             $image = $request->file('visualization_video');
             $name = $max.'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('uploaded_videos/visualizations');
@@ -141,8 +130,8 @@ class VisualizationController extends Controller
 
         if ($request->hasFile('gallery_file')) {
             $gallery_file_array = [];
-            foreach ($request->file('gallery_file') as $gallery_file){
-                $name = $id."-".Carbon::now()->toTimeString().".".$gallery_file->getClientOriginalExtension();
+            foreach ($request->file('gallery_file') as $key => $gallery_file){
+                $name = $id."-".$key."-".Carbon::now()->timestamp.".".$gallery_file->getClientOriginalExtension();
                 $destinationPath = public_path('uploaded_videos/visualizations');
                 $gallery_file->move($destinationPath, $name);
 

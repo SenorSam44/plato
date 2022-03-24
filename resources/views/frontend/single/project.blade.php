@@ -51,6 +51,9 @@
         .dynamic-logo {
             width: 100px;
         }
+        .tp-bgimg{
+            background-size: contain!important;
+        }
 
         @media (max-width: 728px) {
             .apo-header-section, .apo-hr-controls {
@@ -135,16 +138,20 @@
                     <nav class="apo-slider-thumbs apo-slider-thumbs-hr swiper-container">
                         <button class="swiper-button-prev"><i class="icon icon-chevron-left"></i></button>
                         <div class="swiper-wrapper">
-                            @for($i =1; $i<13; $i++)
-                                <?php $tempvar = 'project_image' . $i ?>
-                                @if(isset($single_project->$tempvar))
-                                    <div class="swiper-slide">
-                                        <div
-                                            data-bg-img-src="{{\Illuminate\Support\Facades\URL::to($single_project->$tempvar)}}"
-                                            class="apo-slider-thumb"></div>
-                                    </div>
-                                @endif
-                            @endfor
+                            <?php $j = 0?>
+                            @while($j<7)
+                                @for($i =1; $i<13; $i++)
+                                    <?php $tempvar = 'project_image' . $i ?>
+                                    @if(isset($single_project->$tempvar))
+                                        <?php $j++?>
+                                        <div class="swiper-slide">
+                                            <div
+                                                data-bg-img-src="{{\Illuminate\Support\Facades\URL::to($single_project->$tempvar)}}"
+                                                class="apo-slider-thumb"></div>
+                                        </div>
+                                    @endif
+                                @endfor
+                            @endwhile
                         </div>
                         <button class="swiper-button-next"><i class="icon icon-chevron-right"></i></button>
                     </nav>
@@ -295,14 +302,15 @@
 
     window.addEventListener("load", function(){
         setTimeout(()=> {
-            if(window.screen.width<729){
-                document.querySelectorAll('.tp-bgimg.defaultimg ').forEach((ele) => {
-                    // console.log();
+            document.querySelectorAll('.tp-bgimg.defaultimg ').forEach((ele) => {
+                // console.log();
+                if(window.screen.width<729){
                     ele.style.backgroundSize = "contain";
                     ele.parentElement.parentElement.style.background = "black";
-                })
-
-            }
+                }else{
+                    ele.style.height = 'calc(100vh - 80px)';
+                }
+            });
         }, 1000)
 
     });

@@ -123,6 +123,10 @@
         color: white;
     }
 
+    .apo-header:hover{
+        background: black;
+    }
+
     @media all and (min-width: 1020px) {
         .apo-header-section {
             height: 60px;

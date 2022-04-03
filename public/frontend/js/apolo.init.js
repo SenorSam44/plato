@@ -25,7 +25,6 @@
 			if( $verticalNav.length ) {
 				$verticalNav.wtNav({
 					cssPrefix: 'apo-',
-					mobileBreakpoint: 10000
 				})
 			}
 
@@ -348,7 +347,7 @@
 			    let carouselItemNumber = document.querySelectorAll('.apo-striped-photos.owl-carousel .apo-striped-photo.pic-box').length
 
 				$.Apolo.modules.OWLCarousel.init( $('.apo-striped-photos.owl-carousel'), {
-					loop: carouselItemNumber > 5,
+					loop: true,
 					nav: true,
 					mouseDrag: false, // !important
 					touchDrag: false,

@@ -1,6 +1,6 @@
 /**
  * wtNav navigation jQuery plugin.
- * 
+ *
  * @author WingArt Team
  * @version 1.0
  * @required Modernizr
@@ -11,12 +11,12 @@
 
 	/**
 	 * Base plugin configuration.
-	 * 
+	 *
 	 * @var private Object _baseConfig
 	 */
 	var _baseConfig = {
 		cssPrefix: '',
-		mobileBreakpoint: 767,
+		mobileBreakpoint: 1140,
 		classes: {
 			desktopActive: 'selected',
 			tabletActive: 'tapped',
@@ -31,14 +31,14 @@
 
 	/**
 	 * Contains info about text derection.
-	 * 
+	 *
 	 * @var private Boolean _isRTL
 	 */
 	var _isRTL = getComputedStyle(document.body).direction === 'rtl';
 
 	/**
 	 * Adds class, if the sub-menu is not placed into the container.
-	 * 
+	 *
 	 * @param jQuery subMenu
 	 * @param String reverseClass
 	 *
@@ -66,7 +66,7 @@
 
 	/**
 	 * Navigation Constructor function.
-	 * 
+	 *
 	 * @param Object options
 	 * @param jQuery $element
 	 *
@@ -115,48 +115,26 @@
 	 */
 	Navigation.prototype._refresh = function(){
 
-		if($(window).width() <= this.config.mobileBreakpoint && !(this.state instanceof MobileState)){
+		if($(window).width() <= this.config.mobileBreakpoint){
 
-			if(this.state) this.state.destroy();
+            if (this.state) this.state.destroy();
 
-			this.state = new MobileState(this.config, this.element);
-			this.state.init();
+            this.state = new MobileState(this.config, this.element);
+            this.state.init();
 
-		}
-		else if($(window).width() >= this.config.mobileBreakpoint){
+        } else {
+            if (this.state) this.state.destroy();
+            this.state = new DesktopState(this.config, this.element);
+            this.state.init();
 
-			if(Modernizr.touchevents){
+        }
 
-				if(!(this.state instanceof TabletState)){
+    }
 
-					if(this.state) this.state.destroy();
-
-					this.state = new TabletState(this.config, this.element);
-					this.state.init();
-
-				}
-
-			}
-			else{
-
-				if(!(this.state instanceof DesktopState)){
-
-					if(this.state) this.state.destroy();
-
-					this.state = new DesktopState(this.config, this.element);
-					this.state.init();
-
-				}
-
-			}
-
-		}
-
-	}
 
 	/**
 	 * AbstractState constructor function. Defines base properties for all of the states.
-	 * 
+	 *
 	 * @param Object config
 	 * @param jQuery $element
 	 *
@@ -167,7 +145,7 @@
 
 			/**
 			 * Defines active class for the current state.
-			 * 
+			 *
 			 * @var public string
 			 */
 			activeClass: {
@@ -184,7 +162,7 @@
 
 			/**
 			 * Defines reverse class for the current state.
-			 * 
+			 *
 			 * @var public string
 			 */
 			reverseClass: {
@@ -201,7 +179,7 @@
 
 			/**
 			 * Link to the main navigation jQuery element.
-			 * 
+			 *
 			 * @var public jQuery
 			 */
 			element: {
@@ -218,7 +196,7 @@
 
 			/**
 			 * Defines css prefix.
-			 * 
+			 *
 			 * @var public string
 			 */
 			classPrefix: {
@@ -235,7 +213,7 @@
 
 			/**
 			 * Defines css prefix.
-			 * 
+			 *
 			 * @var public string
 			 */
 			prefix: {
@@ -250,7 +228,7 @@
 
 			/**
 			 * Link to the configuration object.
-			 * 
+			 *
 			 * @var public string
 			 */
 			config: {
@@ -271,7 +249,7 @@
 
 	/**
 	 * DesktopState constructor function.
-	 * 
+	 *
 	 * @param Object config
 	 * @param jQuery $element
 	 *
@@ -350,7 +328,7 @@
 
 	/**
 	 * Destroy-function for the Desktop state.
-	 * 
+	 *
 	 * @return undefined.
 	 */
 	DesktopState.prototype.destroy = function(){
@@ -363,7 +341,7 @@
 
 	/**
 	 * TabletState constructor function.
-	 * 
+	 *
 	 * @param Object config
 	 * @param jQuery $element
 	 *
@@ -374,8 +352,8 @@
 
 		/**
 		 * Defines active class for the Tablet state.
-		 * 
-		 * @var 
+		 *
+		 * @var
 		 */
 		Object.defineProperty(this, 'activeClass', {
 
@@ -392,7 +370,7 @@
 
 	/**
 	 * Initialization of the Tablet navigation state.
-	 * 
+	 *
 	 * @return undefined
 	 */
 	TabletState.prototype.init = function(){
@@ -446,7 +424,7 @@
 
 	/**
 	 * It closes all open sub-menus, except sub-menu which is passed as an argument.
-	 * 
+	 *
 	 * @param jQuery except
 	 *
 	 * @return undefined
@@ -490,7 +468,7 @@
 
 	/**
 	 * Destroy-function for the Tablet state.
-	 * 
+	 *
 	 * @return undefined
 	 */
 	TabletState.prototype.destroy = function(){
@@ -502,7 +480,7 @@
 
 	/**
 	 * MobileState constructor function.
-	 * 
+	 *
 	 * @param Object config
 	 * @param jQuery $element
 	 *
@@ -513,8 +491,8 @@
 
 		/**
 		 * Defines active class for the Mobile state.
-		 * 
-		 * @var 
+		 *
+		 * @var
 		 */
 		Object.defineProperty(this, 'activeClass', {
 
@@ -531,7 +509,7 @@
 
 	/**
 	 * Initialization of mobile navigation state.
-	 * 
+	 *
 	 * @return undefined
 	 */
 	MobileState.prototype.init = function(){

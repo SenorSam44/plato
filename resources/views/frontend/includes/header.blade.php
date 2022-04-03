@@ -3,7 +3,7 @@
     <div class="apo-preloader-outer">
         <div class="apo-preloader-inner">
             <div class="apo-loader">
-                <img src="{{ asset('frontend') }}/images/logo_color.png" alt="">
+                <img src="{{ asset('frontend') }}/images/logo_color.gif" alt="">
             </div>
         </div>
     </div>
@@ -190,7 +190,8 @@
         .apo-social-networks {
             margin-top: 3px;
         }
-
+    }
+    @media (max-width: 1140px) {
         .apo-header-section {
             display: flex !important;
             flex-direction: row;
@@ -198,6 +199,8 @@
 
         .apo-header-component-first {
             order: 2;
+            width: 100%!important;
+            text-align: center;
         }
 
         .apo-header-component-middle {
@@ -206,6 +209,26 @@
 
         .apo-header-component-last {
             order: 3;
+        }
+        .apo-sub-menu{
+            top: unset!important;
+            left: 12vw!important;
+        }
+
+        .apo-mobile-nav-btn{
+            display: block;
+        }
+        .apo-header-component-middle{
+            text-align: start!important;
+        }
+        .apo-navigation{
+            background: black;
+        }
+        .apo-navigation > li {
+            display: block;
+        }
+        .apo-navigation > li > a::after{
+            content: none!important;
         }
     }
 

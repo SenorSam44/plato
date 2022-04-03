@@ -338,10 +338,7 @@ body {
 }
 
 .apo-loader img {
-    position: absolute;
-    top: calc(50vh - 15px);
-    left: calc(50vw - 50px);
-    width: 100px;
+  vertical-align: middle;
 }
 
 @-webkit-keyframes apoBorderPulse {
@@ -1500,16 +1497,9 @@ blockquote:not(:last-child) {
 }
 
 .apo-header:not(.apo-header-vertical) .apo-header-section {
-  padding: 15px 50px 15px 100px;
+  padding: 15px 100px;
 }
-@media (max-width: 729px) {
-    .apo-header:not(.apo-header-vertical) .apo-header-section {
-        padding: 15px 0 0 0;
-    }
-    .apo-header-component-first, .apo-header-component-middle, .apo-header-component-last{
 
-    }
-}
 .apo-header:not(.apo-header-vertical).apo-style-3 .apo-header-section {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -4816,13 +4806,12 @@ table {
 }
 
 .apo-striped-photo {
-    font-weight: 400;
-    color: #fff;
-    overflow: hidden;
-    padding: 60px 30px;
-    position: relative;
-    z-index: 1;
-    background-position: center;
+  font-weight: 400;
+  color: #fff;
+  overflow: hidden;
+  padding: 60px 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .apo-striped-photo::before {
@@ -4986,8 +4975,7 @@ table {
 }
 
 .apo-slider-thumbs-hr .apo-slider-thumb {
-  width: 100px;
-
+  width: 70px;
 }
 
 .apo-slider-thumbs-hr .swiper-button-prev,
